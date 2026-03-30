@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATD Clubhouse — Investor Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0a0a0a;--gold:#c9a84c;--cream:#f5f0e8;--white:#fafafa;
+  --gold-light:#d4b85e;--gold-dark:#b8943f;
+  --heading:'Playfair Display',Georgia,serif;
+  --body:'Inter',-apple-system,Helvetica,Arial,sans-serif;
+}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-x:hidden;font-size:16px}
+body{font-family:var(--body);color:var(--white);background:var(--black);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+
+/* Slide base */
+.slide{min-height:100vh;min-height:100dvh;width:100%;position:relative;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.slide--dark{background:var(--black);color:var(--white)}
+.slide--cream{background:var(--cream);color:var(--black)}
+.slide--gold{background:linear-gradient(135deg,#b8943f 0%,#d4b85e 50%,#c9a84c 100%);color:var(--black)}
+
+/* Typography */
+h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
+.heading-xl{font-size:clamp(3rem,8vw,7rem);letter-spacing:-0.02em}
+.heading-lg{font-size:clamp(2.2rem,5vw,4.5rem);letter-spacing:-0.01em}
+.heading-md{font-size:clamp(1.6rem,3.5vw,3rem)}
+.heading-sm{font-size:clamp(1.2rem,2.5vw,2rem)}
+.body-lg{font-size:clamp(1rem,1.8vw,1.35rem);line-height:1.6;font-weight:300}
+.body-md{font-size:clamp(0.9rem,1.4vw,1.1rem);line-height:1.6;font-weight:400}
+.label{font-family:var(--body);font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase}
+.gold{color:var(--gold)}
+.cream-text{color:var(--cream)}
+
+/* Layout */
+.container{width:100%;max-width:1200px;margin:0 auto;padding:2rem clamp(1.5rem,5vw,4rem)}
+.flex{display:flex}.flex-col{flex-direction:column}.gap-1{gap:1rem}.gap-2{gap:2rem}.gap-3{gap:3rem}
+.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}
+.text-center{text-align:center}
+
+/* Nav dots */
+.nav-dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:0.75rem}
+.nav-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);border:none;cursor:pointer;transition:all 0.3s;padding:0}
+.nav-dot.active{background:var(--gold);transform:scale(1.3)}
+.nav-dot:hover{background:var(--gold-light)}
+@media(max-width:768px){.nav-dots{right:0.75rem;gap:0.5rem}.nav-dot{width:7px;height:7px}}
+
+/* ==================== SLIDE 1: HERO ==================== */
+.hero{position:relative;justify-content:flex-end;padding-bottom:0}
+.hero-bg{position:absolute;inset:0;background:url('https://www.atdclubhouse.com/cdn/shop/files/EDIT83.webp?v=1731269572&width=2200') center/cover no-repeat;background-color:#1a1510}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.3) 0%,rgba(10,10,10,0.5) 40%,rgba(10,10,10,0.85) 100%)}
+.hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 clamp(1.5rem,5vw,4rem)}
+.hero-tagline{font-size:clamp(3.5rem,10vw,9rem);font-family:var(--heading);font-weight:800;letter-spacing:0.04em;color:var(--white);margin-bottom:0.3em;line-height:0.95}
+.hero-subtitle{font-size:clamp(1rem,2vw,1.5rem);font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.8);margin-bottom:3rem}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;width:100%;max-width:1000px;background:rgba(255,255,255,0.1);border-top:1px solid rgba(201,168,76,0.3);margin-bottom:0}
+.hero-stat{padding:1.8rem 1rem;text-align:center;background:rgba(10,10,10,0.7);backdrop-filter:blur(10px)}
+.hero-stat-value{font-family:var(--heading);font-size:clamp(1.3rem,3vw,2.2rem);font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums;margin-bottom:0.3rem}
+.hero-stat-label{font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6)}
+@media(max-width:600px){.hero-stats{grid-template-columns:repeat(2,1fr)}}
+.hero-badge{display:inline-block;padding:0.5rem 1.8rem;border:1px solid var(--gold);color:var(--gold);font-size:0.7rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:2rem;border-radius:2px}
+
+/* ==================== SLIDE 2: PROBLEM ==================== */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;min-height:80vh}
+.problem-text h2{margin-bottom:1.5rem}
+.problem-points{list-style:none;padding:0}
+.problem-points li{padding:1rem 0;border-bottom:1px solid rgba(201,168,76,0.15);font-size:clamp(0.95rem,1.4vw,1.15rem);font-weight:300;color:rgba(255,255,255,0.85);display:flex;align-items:flex-start;gap:0.8rem}
+.problem-points li::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:0.55rem;flex-shrink:0}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;border-radius:0.5rem;overflow:hidden}
+.photo-grid img{width:100%;height:200px;object-fit:cover;transition:transform 0.5s;background:#1a1510}
+.photo-grid img:hover{transform:scale(1.03)}
+@media(max-width:768px){.problem-grid{grid-template-columns:1fr;gap:2rem}.photo-grid img{height:160px}}
+
+/* ==================== SLIDE 3: SOLUTION ==================== */
+.solution-tagline{max-width:700px;margin:0 auto 3rem;opacity:0.7;text-align:center}
+.service-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:2rem}
+.service-card{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.12);border-radius:0.5rem;padding:clamp(1rem,2vw,2rem);text-align:center;transition:all 0.3s}
+.service-card:hover{border-color:var(--gold);background:rgba(201,168,76,0.05);transform:translateY(-2px)}
+.service-icon{font-size:2rem;margin-bottom:0.8rem;display:block}
+.service-card h4{font-family:var(--heading);font-size:clamp(0.9rem,1.2vw,1.1rem);margin-bottom:0.4rem;color:var(--white)}
+.service-card p{font-size:0.8rem;color:rgba(255,255,255,0.5);font-weight:300}
+.cage-free{display:inline-block;margin-top:2rem;padding:0.8rem 2.5rem;border:1px solid var(--gold);color:var(--gold);font-family:var(--heading);font-size:clamp(1rem,1.5vw,1.3rem);font-style:italic;letter-spacing:0.02em}
+@media(max-width:900px){.service-cards{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:500px){.service-cards{grid-template-columns:repeat(2,1fr)}}
+
+/* ==================== SLIDE 4: TRACTION ==================== */
+.traction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem}
+.traction-card{background:var(--white);border-radius:0.5rem;padding:clamp(1.2rem,2.5vw,2.2rem);text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.traction-value{font-family:var(--heading);font-size:clamp(2rem,4vw,3.5rem);font-weight:800;color:var(--black);font-variant-numeric:tabular-nums;line-height:1}
+.traction-label{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.45);margin-top:0.5rem}
+.traction-sub{font-size:clamp(1rem,1.8vw,1.3rem);color:var(--gold-dark);font-weight:600;font-style:italic;font-family:var(--heading)}
+@media(max-width:600px){.traction-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ==================== SLIDE 5: MARKET ==================== */
+.market-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.market-card{padding:clamp(1.5rem,2.5vw,2.5rem);border:1px solid rgba(201,168,76,0.15);border-radius:0.5rem;background:rgba(255,255,255,0.02)}
+.market-card h3{font-size:clamp(2rem,4vw,3.2rem);color:var(--gold);margin-bottom:0.5rem;font-variant-numeric:tabular-nums}
+.market-card h4{font-size:clamp(0.85rem,1.2vw,1rem);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.8rem;color:rgba(255,255,255,0.9)}
+.market-card p{font-size:clamp(0.85rem,1vw,0.95rem);color:rgba(255,255,255,0.55);line-height:1.5}
+@media(max-width:700px){.market-cards{grid-template-columns:1fr}}
+
+/* ==================== SLIDE 6: VILLAGE POC ==================== */
+.poc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.poc-image{border-radius:0.5rem;overflow:hidden;position:relative;aspect-ratio:4/3;background:#1a1510}
+.poc-image img{width:100%;height:100%;object-fit:cover}
+.poc-image::after{content:'VILLAGE LOCATION';position:absolute;bottom:1rem;left:1rem;font-size:0.65rem;font-weight:600;letter-spacing:0.12em;padding:0.4rem 0.8rem;background:rgba(10,10,10,0.8);border:1px solid var(--gold);color:var(--gold);border-radius:2px}
+.poc-financials{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.poc-metric{padding:1rem;background:rgba(201,168,76,0.06);border-left:2px solid var(--gold);border-radius:0 0.3rem 0.3rem 0}
+.poc-metric-value{font-family:var(--heading);font-size:clamp(1.2rem,2vw,1.8rem);font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+.poc-metric-label{font-size:0.7rem;font-weight:500;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.06em;margin-top:0.2rem}
+@media(max-width:768px){.poc-grid{grid-template-columns:1fr}}
+
+/* ==================== SLIDE 7: ROYALMOUNT ==================== */
+.rm-features{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2.5rem 0}
+.rm-feature{background:rgba(0,0,0,0.12);border-radius:0.5rem;padding:clamp(1rem,2vw,1.8rem);text-align:center}
+.rm-feature h4{font-size:clamp(0.85rem,1.1vw,1rem);font-weight:700;margin-bottom:0.3rem}
+.rm-feature p{font-size:0.8rem;color:rgba(0,0,0,0.6)}
+.rm-target{display:inline-block;padding:0.8rem 2.5rem;background:var(--black);color:var(--gold);font-family:var(--heading);font-size:clamp(1.2rem,2vw,1.6rem);border-radius:0.3rem;font-weight:700;font-variant-numeric:tabular-nums}
+@media(max-width:700px){.rm-features{grid-template-columns:repeat(2,1fr)}}
+
+/* ==================== SLIDE 8: PRIVATE LABEL ==================== */
+.margin-compare{display:flex;gap:2rem;align-items:flex-end;justify-content:center;margin:2.5rem 0;height:200px}
+.margin-bar-wrap{display:flex;flex-direction:column;align-items:center;height:100%}
+.margin-bar{width:clamp(80px,12vw,140px);border-radius:0.3rem 0.3rem 0 0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:1rem;position:relative;transition:height 0.8s}
+.margin-bar span{font-family:var(--heading);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:800;color:var(--white)}
+.margin-bar.ours{height:75%;background:linear-gradient(to top,var(--gold-dark),var(--gold-light))}
+.margin-bar.industry{height:42%;background:rgba(255,255,255,0.12)}
+.margin-label{margin-top:0.8rem;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.6)}
+
+/* ==================== SLIDE 9: PROJECTIONS ==================== */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2rem 0}
+.proj-card{background:var(--white);border-radius:0.5rem;padding:clamp(1.2rem,2.5vw,2rem);text-align:center;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.proj-card.highlight{border:2px solid var(--gold-dark)}
+.proj-year{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(0,0,0,0.4);margin-bottom:0.6rem}
+.proj-revenue{font-family:var(--heading);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:var(--black);font-variant-numeric:tabular-nums;line-height:1}
+.proj-ebitda{font-size:clamp(0.95rem,1.5vw,1.2rem);color:var(--gold-dark);font-weight:600;margin-top:0.3rem;font-variant-numeric:tabular-nums}
+.proj-bar{height:4px;background:var(--cream);border-radius:2px;margin-top:1rem;overflow:hidden}
+.proj-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));border-radius:2px}
+.combined-note{margin-top:1.5rem;padding:1rem 2rem;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:0.3rem;display:inline-block}
+@media(max-width:600px){.proj-grid{grid-template-columns:1fr}}
+
+/* ==================== SLIDE 10: THE RAISE ==================== */
+.raise-amount{font-size:clamp(4rem,12vw,10rem);font-family:var(--heading);font-weight:800;color:var(--gold);line-height:1;font-variant-numeric:tabular-nums;margin-bottom:0.3rem}
+.deal-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2.5rem 0;max-width:800px}
+.deal-card{padding:clamp(1rem,2vw,1.8rem);border:1px solid rgba(201,168,76,0.25);border-radius:0.5rem;text-align:center;background:rgba(201,168,76,0.04)}
+.deal-card-value{font-family:var(--heading);font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+.deal-card-label{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:0.3rem}
+.return-box{padding:1.2rem 2.5rem;background:linear-gradient(135deg,rgba(201,168,76,0.15),rgba(201,168,76,0.05));border:1px solid var(--gold);border-radius:0.5rem;display:inline-block}
+.return-box span{font-family:var(--heading);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+@media(max-width:600px){.deal-cards{grid-template-columns:1fr}}
+
+/* ==================== SLIDE 11: USE OF FUNDS ==================== */
+.funds-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.donut-wrap{position:relative;width:clamp(250px,30vw,360px);aspect-ratio:1;margin:0 auto}
+.donut-wrap svg{width:100%;height:100%;transform:rotate(-90deg)}
+.donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.donut-center-value{font-family:var(--heading);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+.donut-center-label{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+.fund-items{display:flex;flex-direction:column;gap:1rem}
+.fund-item{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:0.4rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
+.fund-swatch{width:14px;height:14px;border-radius:3px;flex-shrink:0}
+.fund-item-text{flex:1}
+.fund-item-name{font-weight:600;font-size:0.95rem}
+.fund-item-detail{font-size:0.8rem;color:rgba(255,255,255,0.45)}
+.fund-item-amount{font-family:var(--heading);font-weight:700;font-size:1.1rem;color:var(--gold);font-variant-numeric:tabular-nums}
+@media(max-width:768px){.funds-layout{grid-template-columns:1fr}}
+
+/* ==================== SLIDE 12: CLOSE ==================== */
+.close-slide{position:relative;justify-content:center;align-items:center;text-align:center}
+.close-bg{position:absolute;inset:0;background:url('https://www.atdclubhouse.com/cdn/shop/files/preview_images/cf66cb2a63cd4500be31e79647597b8d.thumbnail.0000000000_1100x.jpg?v=1731362531') center/cover no-repeat;background-color:#1a1510}
+.close-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.6),rgba(10,10,10,0.88))}
+.close-content{position:relative;z-index:2}
+.close-cta{margin-top:2.5rem;display:flex;flex-direction:column;gap:0.8rem;align-items:center}
+.close-link{color:var(--gold);text-decoration:none;font-size:clamp(1rem,1.5vw,1.3rem);font-weight:500;letter-spacing:0.04em;transition:color 0.3s}
+.close-link:hover{color:var(--gold-light)}
+.close-social{margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.5)}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.stagger-1{transition-delay:0.1s}.stagger-2{transition-delay:0.2s}.stagger-3{transition-delay:0.3s}.stagger-4{transition-delay:0.4s}.stagger-5{transition-delay:0.5s}
+
+/* Print */
+@media print{html{scroll-snap-type:none}.slide{min-height:auto;page-break-after:always}.nav-dots{display:none}}
+</style>
+</head>
+<body>
+
+<!-- Nav Dots -->
+<nav class="nav-dots" aria-label="Slide navigation">
+  <button class="nav-dot active" data-slide="0" aria-label="Slide 1"></button>
+  <button class="nav-dot" data-slide="1" aria-label="Slide 2"></button>
+  <button class="nav-dot" data-slide="2" aria-label="Slide 3"></button>
+  <button class="nav-dot" data-slide="3" aria-label="Slide 4"></button>
+  <button class="nav-dot" data-slide="4" aria-label="Slide 5"></button>
+  <button class="nav-dot" data-slide="5" aria-label="Slide 6"></button>
+  <button class="nav-dot" data-slide="6" aria-label="Slide 7"></button>
+  <button class="nav-dot" data-slide="7" aria-label="Slide 8"></button>
+  <button class="nav-dot" data-slide="8" aria-label="Slide 9"></button>
+  <button class="nav-dot" data-slide="9" aria-label="Slide 10"></button>
+  <button class="nav-dot" data-slide="10" aria-label="Slide 11"></button>
+  <button class="nav-dot" data-slide="11" aria-label="Slide 12"></button>
+</nav>
+
+<!-- ==================== SLIDE 1: HERO ==================== -->
+<section class="slide hero" id="slide-0">
+  <div class="hero-bg" role="img" aria-label="ATD Clubhouse facility"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up">Investor Presentation 2026</div>
+    <h1 class="hero-tagline fade-up stagger-1">THEY<br>DESERVE IT</h1>
+    <p class="hero-subtitle fade-up stagger-2">776 families trust us with the ones who can't speak for themselves</p>
+    <div class="hero-stats fade-up stagger-3">
+      <div class="hero-stat">
+        <div class="hero-stat-value">$420K</div>
+        <div class="hero-stat-label">Revenue Run Rate</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">+78%</div>
+        <div class="hero-stat-label">Year over Year</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">776</div>
+        <div class="hero-stat-label">Active Clients</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">45%</div>
+        <div class="hero-stat-label">EBITDA Margin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 2: THE PROBLEM ==================== -->
+<section class="slide slide--dark" id="slide-1">
+  <div class="container">
+    <div class="problem-grid">
+      <div class="problem-text">
+        <p class="label gold fade-up" style="margin-bottom:0.8rem">The Problem</p>
+        <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:1.5rem">Montreal's dogs<br>deserve <em class="gold">better</em></h2>
+        <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.7);margin-bottom:1.5rem">When someone drops off their dog in the morning, they're trusting a stranger with a family member. Most places treat that like a transaction. We treat it like what it is: sacred.</p>
+        <ul class="problem-points fade-up stagger-2">
+          <li>8.5M Canadian pet households, spending more every year, with nowhere premium to go</li>
+          <li>Kennels that smell like bleach. Groomers who rush. Daycare that's just a room with a camera.</li>
+          <li>Owners know the difference. They're driving across the city to find us. That's not marketing. That's a market screaming for something better.</li>
+          <li>$9B+ industry. Zero premium brands in Quebec. The door is wide open.</li>
+        </ul>
+      </div>
+      <div class="photo-grid fade-up stagger-3">
+        <img src="https://www.atdclubhouse.com/cdn/shop/files/dog-grooming-boston-terrier-atd-clubhouse-montreal.webp?v=1745531488&width=533" alt="Boston Terrier grooming" loading="lazy">
+        <img src="https://www.atdclubhouse.com/cdn/shop/files/dog-grooming-curly-coat-poodle-montreal-atd-clubhouse.webp?v=1745531594&width=533" alt="Poodle grooming" loading="lazy">
+        <img src="https://www.atdclubhouse.com/cdn/shop/files/boston-terrier-grooming-atd-clubhouse-montreal.webp?v=1732227495&width=533" alt="Boston Terrier at ATD" loading="lazy">
+        <img src="https://www.atdclubhouse.com/cdn/shop/files/small-dog-grooming-services-montreal-poodle-mix.webp?v=1745531782&width=533" alt="Small dog grooming" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 3: OUR SOLUTION ==================== -->
+<section class="slide slide--dark" id="slide-2">
+  <div class="container text-center">
+    <p class="label gold fade-up" style="margin-bottom:0.8rem">Our Solution</p>
+    <h2 class="heading-lg fade-up stagger-1">We built the clubhouse<br>dogs <em class="gold">deserve</em></h2>
+    <p class="body-lg solution-tagline fade-up stagger-2">Every dog that walks through our door gets greeted by name. Their owners get a photo at the end of the day. That's not a service. That's a relationship.</p>
+    <div class="service-cards fade-up stagger-3">
+      <div class="service-card">
+        <span class="service-icon">☀️</span>
+        <h4>Daily Care</h4>
+        <p>Supervised play, socialization & enrichment</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">✂️</span>
+        <h4>Grooming</h4>
+        <p>Breed-specific cuts, spa treatments & care</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌙</span>
+        <h4>Boarding</h4>
+        <p>Overnight stays with 24/7 supervision</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🚐</span>
+        <h4>Transport</h4>
+        <p>Door-to-door pickup & delivery service</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🎓</span>
+        <h4>Training</h4>
+        <p>Behavioral & obedience programs</p>
+      </div>
+    </div>
+    <div class="cage-free fade-up stagger-4">Free roam. No cages. Ever.</div>
+    <p class="fade-up stagger-5" style="margin-top:1.5rem;font-size:clamp(0.85rem,1.2vw,1rem);color:rgba(255,255,255,0.4);max-width:500px;margin-left:auto;margin-right:auto;font-style:italic">"I cried the first time I picked up my dog and he didn't want to leave. That's when I knew this place was different." — ATD Client</p>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 4: TRACTION ==================== -->
+<section class="slide slide--cream" id="slide-3">
+  <div class="container text-center">
+    <p class="label fade-up" style="margin-bottom:0.8rem;color:var(--gold-dark)">Traction</p>
+    <h2 class="heading-lg fade-up stagger-1" style="color:var(--black)">Demand is not slowing down.<br>It's <em style="color:var(--gold-dark)">accelerating</em>.</h2>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(0,0,0,0.6);max-width:650px;margin:1rem auto 2.5rem">We never ran an ad. Never paid for a click. Every single client found us through someone who loved us enough to tell their friends. That kind of growth doesn't come from a funnel. It comes from a feeling.</p>
+    <div class="traction-grid fade-up stagger-2" style="margin-top:0">
+      <div class="traction-card">
+        <div class="traction-value">$420K</div>
+        <div class="traction-label">Revenue Run Rate</div>
+      </div>
+      <div class="traction-card">
+        <div class="traction-value" style="color:#b8943f">+78%</div>
+        <div class="traction-label">Year-over-Year Growth</div>
+      </div>
+      <div class="traction-card">
+        <div class="traction-value">776</div>
+        <div class="traction-label">Active Clients</div>
+      </div>
+      <div class="traction-card">
+        <div class="traction-value">41%</div>
+        <div class="traction-label">Recurring Package Revenue</div>
+      </div>
+      <div class="traction-card">
+        <div class="traction-value">45%</div>
+        <div class="traction-label">EBITDA Margin</div>
+      </div>
+      <div class="traction-card">
+        <div class="traction-value">$189K</div>
+        <div class="traction-label">Annual EBITDA</div>
+      </div>
+    </div>
+    <div class="fade-up stagger-3" style="margin-top:2rem;display:flex;flex-direction:column;align-items:center;gap:0.8rem">
+      <p class="traction-sub">Zero paid acquisition. Zero marketing budget. Pure word of mouth.</p>
+      <p style="font-size:clamp(0.85rem,1.3vw,1.05rem);color:rgba(0,0,0,0.5);font-style:italic;max-width:500px">Best month ever: January 2026 ($33,038). Every quarter breaks the record before it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 5: THE MARKET ==================== -->
+<section class="slide slide--dark" id="slide-4">
+  <div class="container text-center">
+    <p class="label gold fade-up" style="margin-bottom:0.8rem">The Market</p>
+    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:2.5rem">A massive market<br>with <em class="gold">no premium leader</em></h2>
+    <div class="market-cards fade-up stagger-2">
+      <div class="market-card">
+        <h3>$9B+</h3>
+        <h4>Canadian Pet Industry</h4>
+        <p>Growing 6-8% annually with pet humanization trend accelerating spend per household</p>
+      </div>
+      <div class="market-card">
+        <h3>7-10x</h3>
+        <h4>PE Rollup Multiples</h4>
+        <p>Private equity is actively consolidating pet services at premium EBITDA multiples across North America</p>
+      </div>
+      <div class="market-card">
+        <h3>0</h3>
+        <h4>Premium Brands in Montreal</h4>
+        <p>The city's premium tier is completely underserved — fragmented independents with no brand equity</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 6: VILLAGE POC ==================== -->
+<section class="slide slide--dark" id="slide-5">
+  <div class="container">
+    <div class="poc-grid">
+      <div>
+        <p class="label gold fade-up" style="margin-bottom:0.8rem">Proof of Concept</p>
+        <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.8rem">Village didn't just<br><em class="gold">prove it</em></h2>
+        <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.6);margin-bottom:0.5rem">23 dogs a day in daycare. Grooming booked solid weeks out. Clients driving 30+ minutes across Montreal because there's nothing like us closer to home. We started turning people away.</p>
+        <p class="body-md fade-up stagger-2" style="color:var(--gold);margin-bottom:0.5rem;font-style:italic;font-family:var(--heading)">The hardest part of our day is telling a dog parent we're full.</p>
+        <p class="body-md fade-up stagger-2" style="color:rgba(255,255,255,0.45);margin-bottom:2rem">That's not a problem. That's proof. We don't need to prove demand. We need more space to serve it.</p>
+        <div class="poc-financials fade-up stagger-3">
+          <div class="poc-metric">
+            <div class="poc-metric-value">$420K</div>
+            <div class="poc-metric-label">Tracking $500K</div>
+          </div>
+          <div class="poc-metric">
+            <div class="poc-metric-value">$10K</div>
+            <div class="poc-metric-label">Monthly Payroll</div>
+          </div>
+          <div class="poc-metric">
+            <div class="poc-metric-value">$4K</div>
+            <div class="poc-metric-label">Monthly Rent</div>
+          </div>
+          <div class="poc-metric">
+            <div class="poc-metric-value">$189K</div>
+            <div class="poc-metric-label">EBITDA (45%)</div>
+          </div>
+          <div class="poc-metric" style="grid-column:1/-1">
+            <div class="poc-metric-value">$1.2–1.5M</div>
+            <div class="poc-metric-label">Standalone Valuation</div>
+          </div>
+        </div>
+      </div>
+      <div class="poc-image fade-up stagger-2">
+        <img src="https://www.atdclubhouse.com/cdn/shop/files/preview_images/5201fe86c23f4ab7ab0c2dfe8c303db1.thumbnail.0000000000_940x.jpg?v=1731361626" alt="ATD Clubhouse Village facility" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 7: ROYALMOUNT ==================== -->
+<section class="slide slide--gold" id="slide-6">
+  <div class="container text-center">
+    <p class="label fade-up" style="margin-bottom:0.8rem;color:rgba(0,0,0,0.5)">The Expansion</p>
+    <h2 class="heading-lg fade-up stagger-1">Royalmount</h2>
+    <p class="body-lg fade-up stagger-2" style="max-width:650px;margin:1rem auto 0;color:rgba(0,0,0,0.7)">Montreal's $1.2B mega-destination. We didn't pick Royalmount because it's fancy. We picked it because our clients from the west end kept asking: "When are you coming closer to us?" This is the answer.</p>
+    <div class="rm-features fade-up stagger-3">
+      <div class="rm-feature">
+        <span style="font-size:1.5rem;display:block;margin-bottom:0.4rem">✂️</span>
+        <h4>Premium Grooming</h4>
+        <p>High-end grooming studio</p>
+      </div>
+      <div class="rm-feature">
+        <span style="font-size:1.5rem;display:block;margin-bottom:0.4rem">🏪</span>
+        <h4>Retail</h4>
+        <p>Curated pet products</p>
+      </div>
+      <div class="rm-feature">
+        <span style="font-size:1.5rem;display:block;margin-bottom:0.4rem">🏷️</span>
+        <h4>Private Label</h4>
+        <p>ATD-branded product line</p>
+      </div>
+      <div class="rm-feature">
+        <span style="font-size:1.5rem;display:block;margin-bottom:0.4rem">🚐</span>
+        <h4>Transport Hub</h4>
+        <p>Connecting both locations</p>
+      </div>
+    </div>
+    <div class="fade-up stagger-4">
+      <div class="rm-target">Y1 Target: $400K Revenue</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 8: PRIVATE LABEL ==================== -->
+<section class="slide slide--dark" id="slide-7">
+  <div class="container text-center">
+    <p class="label gold fade-up" style="margin-bottom:0.8rem">Private Label</p>
+    <h2 class="heading-lg fade-up stagger-1">The margin<br><em class="gold">advantage</em></h2>
+    <div class="margin-compare fade-up stagger-2">
+      <div class="margin-bar-wrap">
+        <div class="margin-bar ours"><span>58%</span></div>
+        <div class="margin-label">ATD Private Label</div>
+      </div>
+      <div class="margin-bar-wrap">
+        <div class="margin-bar industry"><span>32%</span></div>
+        <div class="margin-label">Industry Average</div>
+      </div>
+    </div>
+    <p class="body-lg fade-up stagger-3" style="max-width:600px;margin:0 auto;color:rgba(255,255,255,0.6)">55-60% gross margin vs. industry 30-35%</p>
+    <p class="fade-up stagger-4" style="margin-top:2rem;max-width:600px;margin-left:auto;margin-right:auto">
+      <span style="font-family:var(--heading);font-size:clamp(1.1rem,1.8vw,1.4rem);font-style:italic;color:var(--gold)">We're not just selling products. We're building a brand that dog owners wear like a badge. When your clients tattoo your name on their hearts, you own the margin.</span>
+    </p>
+    <p class="body-md fade-up stagger-5" style="margin-top:1.5rem;color:rgba(255,255,255,0.4)">Phase 2: ATD private label in third-party pet stores across Quebec. The brand starts at Royalmount. It grows everywhere.</p>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 9: PROJECTIONS ==================== -->
+<section class="slide slide--cream" id="slide-8">
+  <div class="container text-center">
+    <p class="label fade-up" style="margin-bottom:0.8rem;color:var(--gold-dark)">Financial Projections</p>
+    <h2 class="heading-lg fade-up stagger-1" style="color:var(--black);margin-bottom:0.5rem">Royalmount Trajectory</h2>
+    <p class="body-md fade-up stagger-2" style="color:rgba(0,0,0,0.5);margin-bottom:2rem">Royalmount location standalone projections</p>
+    <div class="proj-grid fade-up stagger-3">
+      <div class="proj-card">
+        <div class="proj-year">Year 1</div>
+        <div class="proj-revenue">$400K</div>
+        <div class="proj-ebitda">$160K EBITDA</div>
+        <div class="proj-bar"><div class="proj-bar-fill" style="width:18%"></div></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-year">Year 2</div>
+        <div class="proj-revenue">$720K</div>
+        <div class="proj-ebitda">$288K EBITDA</div>
+        <div class="proj-bar"><div class="proj-bar-fill" style="width:33%"></div></div>
+      </div>
+      <div class="proj-card highlight">
+        <div class="proj-year">Year 3</div>
+        <div class="proj-revenue">$2.2M</div>
+        <div class="proj-ebitda">$880K EBITDA</div>
+        <div class="proj-bar"><div class="proj-bar-fill" style="width:100%"></div></div>
+      </div>
+    </div>
+    <div class="combined-note fade-up stagger-4">
+      <span style="font-family:var(--heading);font-weight:700;font-size:clamp(1rem,1.5vw,1.3rem);color:var(--black)">Combined Village + Royalmount at Y3: <span style="color:var(--gold-dark)">$2.5–3M valuation</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 10: THE RAISE ==================== -->
+<section class="slide slide--dark" id="slide-9">
+  <div class="container text-center flex flex-col items-center justify-center">
+    <p class="label gold fade-up" style="margin-bottom:1rem">The Raise</p>
+    <div class="raise-amount fade-up stagger-1">$200,000</div>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.6);margin-bottom:2rem">Fueling the Royalmount expansion</p>
+    <div class="deal-cards fade-up stagger-3">
+      <div class="deal-card">
+        <div class="deal-card-value">10%</div>
+        <div class="deal-card-label">Equity</div>
+      </div>
+      <div class="deal-card">
+        <div class="deal-card-value">$2M</div>
+        <div class="deal-card-label">Pre-Money Valuation</div>
+      </div>
+      <div class="deal-card">
+        <div class="deal-card-value">2.6x</div>
+        <div class="deal-card-label">Target Return at Y3</div>
+      </div>
+    </div>
+    <div class="return-box fade-up stagger-4">
+      <span>$200K → $530K at Year 3</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 11: USE OF FUNDS ==================== -->
+<section class="slide slide--dark" id="slide-10">
+  <div class="container">
+    <div class="funds-layout">
+      <div class="text-center fade-up">
+        <p class="label gold" style="margin-bottom:0.8rem">Use of Funds</p>
+        <h2 class="heading-md" style="margin-bottom:2rem">Every dollar<br>has a <em class="gold">job</em></h2>
+        <div class="donut-wrap">
+          <svg viewBox="0 0 200 200">
+            <!-- 45% Buildout -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#c9a84c" stroke-width="28"
+              stroke-dasharray="226.2 276.5" stroke-dashoffset="0" stroke-linecap="butt"/>
+            <!-- 20% Private Label -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#b8943f" stroke-width="28"
+              stroke-dasharray="100.5 402.1" stroke-dashoffset="-226.2" stroke-linecap="butt"/>
+            <!-- 20% Equipment -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#d4b85e" stroke-width="28"
+              stroke-dasharray="100.5 402.1" stroke-dashoffset="-326.7" stroke-linecap="butt"/>
+            <!-- 15% Working Capital -->
+            <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="28"
+              stroke-dasharray="75.4 427.3" stroke-dashoffset="-427.3" stroke-linecap="butt"/>
+          </svg>
+          <div class="donut-center">
+            <div class="donut-center-value">$200K</div>
+            <div class="donut-center-label">Total Raise</div>
+          </div>
+        </div>
+      </div>
+      <div class="fund-items fade-up stagger-2">
+        <div class="fund-item">
+          <div class="fund-swatch" style="background:#c9a84c"></div>
+          <div class="fund-item-text">
+            <div class="fund-item-name">Buildout & Renovation</div>
+            <div class="fund-item-detail">Royalmount location fit-out</div>
+          </div>
+          <div class="fund-item-amount">$90K</div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-swatch" style="background:#b8943f"></div>
+          <div class="fund-item-text">
+            <div class="fund-item-name">Private Label Launch</div>
+            <div class="fund-item-detail">Product development & initial inventory</div>
+          </div>
+          <div class="fund-item-amount">$40K</div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-swatch" style="background:#d4b85e"></div>
+          <div class="fund-item-text">
+            <div class="fund-item-name">Equipment</div>
+            <div class="fund-item-detail">Grooming stations, furniture & tech</div>
+          </div>
+          <div class="fund-item-amount">$40K</div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-swatch" style="background:rgba(201,168,76,0.4)"></div>
+          <div class="fund-item-text">
+            <div class="fund-item-name">Working Capital</div>
+            <div class="fund-item-detail">Operating runway & contingency</div>
+          </div>
+          <div class="fund-item-amount">$30K</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 12: CLOSE ==================== -->
+<section class="slide close-slide" id="slide-11">
+  <div class="close-bg" role="img" aria-label="ATD Clubhouse"></div>
+  <div class="close-overlay"></div>
+  <div class="close-content">
+    <p class="label gold fade-up" style="margin-bottom:1rem">Let's Talk</p>
+    <h2 class="heading-xl fade-up stagger-1">This isn't a pitch.<br>It's an <em class="gold">invitation</em>.</h2>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.5);max-width:550px;margin:1.5rem auto 2.5rem">We started with one room, two founders, and a belief that dogs deserve more. 776 families later, we know we were right. Come build the rest with us.</p>
+    <div class="close-cta fade-up stagger-3">
+      <a href="mailto:salomon@atdclubhouse.com" class="close-link">salomon@atdclubhouse.com</a>
+      <a href="https://atdclubhouse.com" target="_blank" rel="noopener" class="close-link">atdclubhouse.com</a>
+      <p class="close-social">@atdclubhouse</p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  'use strict';
+
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.nav-dot');
+
+  // Scroll-based active dot
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        const index = Array.from(slides).indexOf(entry.target);
+        dots.forEach(function(d, i) {
+          d.classList.toggle('active', i === index);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  slides.forEach(function(slide) { observer.observe(slide); });
+
+  // Dot click navigation
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      const i = parseInt(this.dataset.slide);
+      slides[i].scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Arrow key navigation
+  let currentSlide = 0;
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      currentSlide = Math.min(currentSlide + 1, slides.length - 1);
+      slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      currentSlide = Math.max(currentSlide - 1, 0);
+      slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  // Keep currentSlide in sync with scroll
+  const syncObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        currentSlide = Array.from(slides).indexOf(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(function(slide) { syncObserver.observe(slide); });
+
+  // Fade-up on scroll
+  const fadeObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(function(el) {
+    fadeObserver.observe(el);
+  });
+})();
+</script>
+</body>
+</html>

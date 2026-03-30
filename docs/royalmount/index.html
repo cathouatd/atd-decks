@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATD × Earth Rated — Royalmount Pet Relief Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0a0a0a;--gold:#c9a84c;--cream:#f5f0e8;--white:#fafafa;
+  --gold-light:#d4b85e;--gold-dark:#b8943f;
+  --green:#2d6a4f;--green-light:#52b788;--green-dim:rgba(82,183,136,0.15);
+  --heading:'Playfair Display',Georgia,serif;
+  --body:'Inter',-apple-system,Helvetica,Arial,sans-serif;
+}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-x:hidden;font-size:16px}
+body{font-family:var(--body);color:var(--white);background:var(--black);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+
+/* Slide base */
+.slide{min-height:100vh;min-height:100dvh;width:100%;position:relative;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.slide--dark{background:var(--black);color:var(--white)}
+.slide--cream{background:var(--cream);color:var(--black)}
+.slide--gold{background:linear-gradient(135deg,#b8943f 0%,#d4b85e 50%,#c9a84c 100%);color:var(--black)}
+
+/* Typography */
+h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
+.heading-xl{font-size:clamp(3rem,8vw,7rem);letter-spacing:-0.02em}
+.heading-lg{font-size:clamp(2.2rem,5vw,4.5rem);letter-spacing:-0.01em}
+.heading-md{font-size:clamp(1.6rem,3.5vw,3rem)}
+.heading-sm{font-size:clamp(1.2rem,2.5vw,2rem)}
+.body-lg{font-size:clamp(1rem,1.8vw,1.35rem);line-height:1.6;font-weight:300}
+.body-md{font-size:clamp(0.9rem,1.4vw,1.1rem);line-height:1.6;font-weight:400}
+.label{font-family:var(--body);font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase}
+.gold{color:var(--gold)}
+.cream-text{color:var(--cream)}
+
+/* Layout */
+.container{width:100%;max-width:1200px;margin:0 auto;padding:2rem clamp(1.5rem,5vw,4rem)}
+.flex{display:flex}.flex-col{flex-direction:column}.gap-1{gap:1rem}.gap-2{gap:2rem}.gap-3{gap:3rem}
+.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}
+.text-center{text-align:center}
+
+/* Nav dots */
+.nav-dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:0.75rem}
+.nav-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);border:none;cursor:pointer;transition:all 0.3s;padding:0}
+.nav-dot.active{background:var(--gold);transform:scale(1.3)}
+.nav-dot:hover{background:var(--gold-light)}
+@media(max-width:768px){.nav-dots{right:0.75rem;gap:0.5rem}.nav-dot{width:7px;height:7px}}
+
+/* Animations */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.stagger-1{transition-delay:0.1s}.stagger-2{transition-delay:0.2s}.stagger-3{transition-delay:0.3s}.stagger-4{transition-delay:0.4s}.stagger-5{transition-delay:0.5s}
+
+/* ==================== SLIDE 1: HERO ==================== */
+.hero{position:relative;justify-content:flex-end;padding-bottom:0}
+.hero-bg{position:absolute;inset:0;background:url('https://www.atdclubhouse.com/cdn/shop/files/EDIT83.webp?v=1731269572&width=2200') center/cover no-repeat;background-color:#1a1510}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.25) 0%,rgba(10,10,10,0.55) 40%,rgba(10,10,10,0.9) 100%)}
+.hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 clamp(1.5rem,5vw,4rem)}
+.hero-eyebrow{font-size:0.75rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.hero-tagline{font-size:clamp(3.5rem,10vw,9rem);font-family:var(--heading);font-weight:800;letter-spacing:0.02em;color:var(--white);margin-bottom:0.2em;line-height:0.95}
+.hero-tagline em{color:var(--gold);font-style:italic}
+.hero-subtitle{font-size:clamp(1rem,2vw,1.4rem);font-weight:300;letter-spacing:0.06em;color:rgba(255,255,255,0.75);margin-bottom:3rem;max-width:580px}
+.hero-partners{display:flex;align-items:center;gap:2rem;padding:1.5rem 2.5rem;background:rgba(10,10,10,0.7);backdrop-filter:blur(12px);border:1px solid rgba(201,168,76,0.25);border-radius:4px;margin-bottom:0}
+.partner-block .partner-name{font-family:var(--heading);font-size:clamp(1rem,2vw,1.5rem);font-weight:700}
+.partner-block .partner-role{font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:0.25rem}
+.hero-badge{position:absolute;bottom:2.5rem;right:clamp(1.5rem,5vw,4rem);font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);padding:0.5rem 1.2rem;border:1px solid rgba(201,168,76,0.35);border-radius:2px;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px)}
+@media(max-width:600px){.hero-partners{flex-direction:column;gap:1.2rem;text-align:center}}
+
+/* ==================== SLIDE 2: THE MOMENT ==================== */
+.moment-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start;min-height:75vh}
+.pull-quote{font-family:var(--heading);font-size:clamp(1.3rem,2.5vw,2rem);font-style:italic;line-height:1.4;color:var(--white);border-left:3px solid var(--gold);padding-left:1.5rem;margin:1.5rem 0}
+.pull-quote cite{display:block;font-family:var(--body);font-size:0.65rem;font-style:normal;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:0.7rem;opacity:0.8}
+.reaction-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:0.75rem}
+.reaction-item{padding:1rem 1.2rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:3px;font-size:clamp(0.85rem,1.2vw,0.95rem);font-weight:300;line-height:1.55;color:rgba(255,255,255,0.78)}
+.reaction-item strong{display:block;font-family:var(--body);font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.35rem}
+.stat-box{margin-top:1.5rem;padding:1.5rem 2rem;background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.2);border-radius:4px;text-align:center}
+.stat-box .big{font-family:var(--heading);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;color:var(--gold);line-height:1}
+.stat-box .lbl{font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:0.4rem}
+@media(max-width:768px){.moment-grid{grid-template-columns:1fr}}
+
+/* ==================== SLIDE 3: THE OPPORTUNITY ==================== */
+.opp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
+.opp-stat{padding:2rem 1.5rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;text-align:center}
+.opp-stat .val{font-family:var(--heading);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--gold);line-height:1;margin-bottom:0.5rem}
+.opp-stat .lbl{font-size:0.68rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.45);line-height:1.4}
+.insight-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.insight-item{padding:1.2rem 1.5rem;border-left:3px solid var(--gold);background:rgba(201,168,76,0.05);font-size:clamp(0.88rem,1.2vw,1rem);font-weight:300;line-height:1.5;color:rgba(255,255,255,0.75)}
+@media(max-width:768px){.opp-stats{grid-template-columns:1fr 1fr}.insight-list{grid-template-columns:1fr}}
+@media(max-width:480px){.opp-stats{grid-template-columns:1fr}}
+
+/* ==================== SLIDE 4: THE PROBLEM REFRAMED ==================== */
+.reframe-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:2rem}
+.reframe-col h3{font-family:var(--heading);font-size:clamp(1.2rem,2vw,1.7rem);margin-bottom:1.2rem}
+.vs-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem}
+.vs-item{padding:0.85rem 1.1rem;border-radius:3px;font-size:clamp(0.85rem,1.2vw,0.95rem);font-weight:300;line-height:1.45}
+.vs-item.bad{background:rgba(200,60,60,0.07);border-left:3px solid rgba(200,80,80,0.45);color:rgba(255,255,255,0.65)}
+.vs-item.good{background:rgba(82,183,136,0.07);border-left:3px solid var(--green-light);color:rgba(255,255,255,0.82)}
+.truth-box{margin-top:2.5rem;padding:1.8rem 2rem;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.22);border-radius:4px;text-align:center}
+.truth-box p{font-family:var(--heading);font-size:clamp(1.1rem,2vw,1.65rem);font-style:italic;color:var(--gold);line-height:1.4}
+@media(max-width:768px){.reframe-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* ==================== SLIDE 5: THE SOLUTION ==================== */
+.solution-intro{max-width:700px;margin:0 auto 3rem;text-align:center;opacity:0.65}
+.solution-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.sol-card{background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.1);border-radius:6px;padding:clamp(1.2rem,2.5vw,2rem);text-align:center;transition:all 0.3s}
+.sol-card:hover{border-color:rgba(201,168,76,0.35);background:rgba(201,168,76,0.05);transform:translateY(-3px)}
+.sol-card .s-icon{font-size:2.2rem;margin-bottom:1rem;display:block}
+.sol-card h3{font-family:var(--heading);font-size:clamp(1rem,1.5vw,1.3rem);margin-bottom:0.6rem;color:var(--white)}
+.sol-card p{font-size:clamp(0.8rem,1.1vw,0.9rem);color:rgba(255,255,255,0.5);font-weight:300;line-height:1.5;margin-bottom:0.8rem}
+.sol-card ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:0.35rem;text-align:left}
+.sol-card ul li{font-size:0.8rem;color:rgba(255,255,255,0.55);padding-left:1rem;position:relative}
+.sol-card ul li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:0.72rem}
+.sol-card.featured{border-color:rgba(201,168,76,0.3);background:rgba(201,168,76,0.05)}
+.sol-card.featured h3{color:var(--gold)}
+@media(max-width:768px){.solution-cards{grid-template-columns:1fr}}
+
+/* ==================== SLIDE 6: STATION IN DETAIL ==================== */
+.station-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.station-visual{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.09);border-radius:8px;padding:2.5rem;text-align:center}
+.station-main-icon{font-size:4.5rem;line-height:1;margin-bottom:1rem}
+.station-title{font-family:var(--heading);font-size:1.7rem;font-weight:700;color:var(--gold);margin-bottom:0.3rem}
+.station-tag{font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.5rem}
+.station-components{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem}
+.comp{padding:0.65rem 0.9rem;background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.15);border-radius:3px;font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.7);text-align:center}
+.station-note{margin-top:1.2rem;font-size:0.72rem;color:rgba(255,255,255,0.3);line-height:1.5}
+.station-details{display:flex;flex-direction:column;gap:1.5rem}
+.detail-block h4{font-family:var(--heading);font-size:1.1rem;color:var(--gold);margin-bottom:0.6rem}
+.detail-block p{font-size:clamp(0.85rem,1.2vw,0.95rem);font-weight:300;color:rgba(255,255,255,0.6);line-height:1.55}
+.locations-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.5rem}
+.loc-pill{padding:0.5rem 0.9rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;font-size:0.75rem;font-weight:500;color:rgba(255,255,255,0.6);text-align:center}
+.loc-pill.primary{background:rgba(201,168,76,0.12);border-color:rgba(201,168,76,0.35);color:var(--gold)}
+@media(max-width:768px){.station-layout{grid-template-columns:1fr;gap:2rem}}
+
+/* ==================== SLIDE 7: THE PARTNERS ==================== */
+.partners-split{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+.partner-card{padding:2.2rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:6px}
+.partner-card .p-logo{font-family:var(--heading);font-size:1.9rem;font-weight:800;margin-bottom:0.3rem}
+.partner-card .p-tag{font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.2rem}
+.partner-card .p-points{list-style:none;padding:0;display:flex;flex-direction:column;gap:0.55rem}
+.partner-card .p-points li{font-size:clamp(0.82rem,1.1vw,0.92rem);font-weight:300;color:rgba(255,255,255,0.65);line-height:1.45;padding-left:1.1rem;position:relative}
+.partner-card .p-points li::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:0.55rem;top:0.3rem}
+.partner-card.atd{border-color:rgba(201,168,76,0.25)}
+.partner-card.atd .p-logo{color:var(--gold)}
+.partner-card.er{border-color:rgba(82,183,136,0.25)}
+.partner-card.er .p-logo{color:var(--green-light)}
+.synergy-bar{padding:1.8rem 2.2rem;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.18);border-radius:4px;display:flex;align-items:center;gap:1.5rem}
+.synergy-bar .icon{font-size:2rem;flex-shrink:0}
+.synergy-bar p{font-family:var(--heading);font-size:clamp(1rem,1.8vw,1.45rem);font-style:italic;color:var(--gold);line-height:1.35}
+@media(max-width:768px){.partners-split{grid-template-columns:1fr}.synergy-bar{flex-direction:column}}
+
+/* ==================== SLIDE 8: THE DOG CODE ==================== */
+.protocol-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin:2rem 0}
+.step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.6rem}
+.step-num{width:44px;height:44px;border-radius:50%;background:rgba(201,168,76,0.12);border:2px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-size:1.2rem;font-weight:800;color:var(--gold);flex-shrink:0}
+.step-icon{font-size:1.7rem;line-height:1}
+.step h4{font-size:0.8rem;font-weight:600;color:var(--white);line-height:1.3}
+.step p{font-size:0.72rem;font-weight:300;color:rgba(255,255,255,0.45);line-height:1.4}
+.protocol-note{padding:1.3rem 1.8rem;background:rgba(82,183,136,0.06);border:1px solid rgba(82,183,136,0.2);border-radius:4px;font-size:clamp(0.85rem,1.2vw,0.95rem);font-weight:300;line-height:1.55;color:rgba(255,255,255,0.7)}
+.protocol-note strong{color:var(--green-light);font-weight:600}
+.enforce-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.2rem}
+.enf{padding:1.1rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:4px;text-align:center}
+.enf .e-icon{font-size:1.6rem;margin-bottom:0.4rem}
+.enf h4{font-size:0.78rem;font-weight:600;color:var(--white);margin-bottom:0.25rem}
+.enf p{font-size:0.72rem;font-weight:300;color:rgba(255,255,255,0.42);line-height:1.4}
+@media(max-width:768px){.protocol-steps{grid-template-columns:repeat(3,1fr)}.enforce-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.protocol-steps{grid-template-columns:1fr 1fr}}
+
+/* ==================== SLIDE 9: THE BUSINESS CASE ==================== */
+.biz-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.biz-col h3{font-family:var(--heading);font-size:clamp(1.3rem,2.2vw,2rem);color:var(--gold);margin-bottom:1.3rem}
+.biz-items{display:flex;flex-direction:column;gap:0.9rem}
+.biz-item{padding:1.1rem 1.3rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px}
+.biz-item .bi-title{font-size:0.9rem;font-weight:600;color:var(--white);margin-bottom:0.25rem}
+.biz-item .bi-body{font-size:0.8rem;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.5}
+.biz-item.highlight{border-color:rgba(201,168,76,0.25);background:rgba(201,168,76,0.04)}
+.biz-item.highlight .bi-title{color:var(--gold)}
+@media(max-width:768px){.biz-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* ==================== SLIDE 10: THE ASK ==================== */
+.timeline{position:relative;display:flex;flex-direction:column;gap:0;margin:2.5rem 0}
+.timeline::before{content:'';position:absolute;left:22px;top:0;bottom:0;width:2px;background:rgba(201,168,76,0.18)}
+.tl-item{display:flex;gap:1.5rem;align-items:flex-start;padding:1.1rem 0;position:relative}
+.tl-dot{width:44px;height:44px;border-radius:50%;background:rgba(201,168,76,0.12);border:2px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:700;letter-spacing:0.04em;color:var(--gold);flex-shrink:0;z-index:1;text-align:center;line-height:1.2}
+.tl-body h4{font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:0.2rem}
+.tl-body p{font-size:0.82rem;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.45}
+.ask-items{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem}
+.ask-item{padding:1.3rem;background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.18);border-radius:4px}
+.ask-item .ask-num{font-family:var(--heading);font-size:1.8rem;font-weight:800;color:rgba(201,168,76,0.25);line-height:1;margin-bottom:0.4rem}
+.ask-item h4{font-size:0.85rem;font-weight:600;color:var(--gold);margin-bottom:0.3rem}
+.ask-item p{font-size:0.78rem;font-weight:300;color:rgba(255,255,255,0.48);line-height:1.45}
+@media(max-width:768px){.ask-items{grid-template-columns:1fr}.timeline::before{left:18px}}
+
+/* ==================== SLIDE 11: CLOSE ==================== */
+.close-slide{position:relative;justify-content:center;align-items:center;text-align:center}
+.close-bg{position:absolute;inset:0;background:url('https://www.atdclubhouse.com/cdn/shop/files/preview_images/cf66cb2a63cd4500be31e79647597b8d.thumbnail.0000000000_1100x.jpg?v=1731362531') center/cover no-repeat;background-color:#1a1510}
+.close-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.5),rgba(10,10,10,0.88))}
+.close-content{position:relative;z-index:2;padding:0 clamp(1.5rem,5vw,4rem)}
+.close-cta{margin-top:2.5rem;display:flex;flex-direction:column;gap:0.8rem;align-items:center}
+.close-contact{padding:1rem 2.2rem;background:rgba(10,10,10,0.6);border:1px solid rgba(201,168,76,0.3);border-radius:4px;backdrop-filter:blur(8px)}
+.close-contact .c-name{font-family:var(--heading);font-size:1.05rem;font-weight:700;color:var(--white)}
+.close-contact .c-role{font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:0.15rem}
+.close-contacts{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+.conf-note{margin-top:2.5rem;font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+
+/* Print */
+@media print{html{scroll-snap-type:none}.slide{min-height:auto;page-break-after:always}.nav-dots{display:none}}
+</style>
+</head>
+<body>
+
+<!-- Nav Dots -->
+<nav class="nav-dots" aria-label="Slide navigation">
+  <button class="nav-dot active" data-slide="0" aria-label="Slide 1: Cover"></button>
+  <button class="nav-dot" data-slide="1" aria-label="Slide 2: The Moment"></button>
+  <button class="nav-dot" data-slide="2" aria-label="Slide 3: The Opportunity"></button>
+  <button class="nav-dot" data-slide="3" aria-label="Slide 4: The Real Problem"></button>
+  <button class="nav-dot" data-slide="4" aria-label="Slide 5: The Solution"></button>
+  <button class="nav-dot" data-slide="5" aria-label="Slide 6: The Station"></button>
+  <button class="nav-dot" data-slide="6" aria-label="Slide 7: The Partners"></button>
+  <button class="nav-dot" data-slide="7" aria-label="Slide 8: The Dog Code"></button>
+  <button class="nav-dot" data-slide="8" aria-label="Slide 9: The Business Case"></button>
+  <button class="nav-dot" data-slide="9" aria-label="Slide 10: The Ask"></button>
+  <button class="nav-dot" data-slide="10" aria-label="Slide 11: Close"></button>
+</nav>
+
+<!-- ==================== SLIDE 1: HERO ==================== -->
+<section class="slide hero" id="slide-0">
+  <div class="hero-bg" role="img" aria-label="ATD Clubhouse facility"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow fade-up">A proposal from ATD Clubhouse × Earth Rated</p>
+    <h1 class="hero-tagline fade-up stagger-1">Bring the<br><em>Dogs Back.</em></h1>
+    <p class="hero-subtitle fade-up stagger-2">A pet relief infrastructure program to make Royalmount the most dog-friendly destination in Canada.</p>
+    <div class="hero-partners fade-up stagger-3">
+      <div class="partner-block">
+        <div class="partner-name" style="color:var(--gold)">ATD Clubhouse</div>
+        <div class="partner-role">Montreal's Premier Dog Care Facility</div>
+      </div>
+      <div style="color:rgba(201,168,76,0.5);font-size:1.5rem">×</div>
+      <div class="partner-block">
+        <div class="partner-name" style="color:#52b788">Earth Rated</div>
+        <div class="partner-role">World's #1 Dog Waste Brand · B Corp</div>
+      </div>
+      <div style="color:rgba(201,168,76,0.5);font-size:1.5rem">×</div>
+      <div class="partner-block">
+        <div class="partner-name" style="color:rgba(255,255,255,0.85)">Royalmount</div>
+        <div class="partner-role">Montreal's Luxury Destination</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-badge">April 7, 2026 — Presented to Royalmount Leadership</div>
+</section>
+
+<!-- ==================== SLIDE 2: THE MOMENT ==================== -->
+<section class="slide slide--dark" id="slide-1">
+  <div class="container">
+    <div class="moment-grid">
+      <div>
+        <p class="label gold fade-up" style="margin-bottom:0.8rem">The Moment</p>
+        <h2 class="heading-lg fade-up stagger-1">You made a<br>difficult decision.<br><em class="gold">We heard you.</em></h2>
+        <div class="pull-quote fade-up stagger-2">
+          "Despite the ongoing efforts of our maintenance teams, these situations have compromised our ability to maintain the highest standards of cleanliness, safety, and overall experience."
+          <cite>— Royalmount, March 25, 2026</cite>
+        </div>
+        <p class="body-md fade-up stagger-3" style="color:rgba(255,255,255,0.55)">The ban was the right call given the tools available. But Montrealers responded — loudly. And what they said matters more than the noise.</p>
+        <div class="stat-box fade-up stagger-4">
+          <div class="big">280+</div>
+          <div class="lbl">Reddit r/montreal comments in 5 days · 2,200+ Instagram likes · CTV, Gazette, CityNews, Timeout coverage</div>
+        </div>
+      </div>
+      <div>
+        <ul class="reaction-list fade-up stagger-2">
+          <li class="reaction-item">
+            <strong>Instagram · Frustrated owner</strong>
+            "This was the only place that allowed me to bring my dog, whom I care for 24/7. It's incredibly unfair that responsible owners get penalized because others can't be respectful."
+          </li>
+          <li class="reaction-item">
+            <strong>Instagram · The request</strong>
+            "Add cleanup stations. Make it easy. Make it impossible to have an excuse."
+          </li>
+          <li class="reaction-item">
+            <strong>Instagram · The reality check</strong>
+            "What should the mall do? Hire extra staff just to clean? The problem is there were no systems in place."
+          </li>
+          <li class="reaction-item">
+            <strong>Reddit r/montreal</strong>
+            "The ban makes sense. But I hope it's temporary. Dog owners should have better infrastructure to work with."
+          </li>
+          <li class="reaction-item">
+            <strong>Montreal Only Instagram · 2,200+ likes</strong>
+            "Only service dogs are welcome at Royalmount. No other animals permitted. What are your thoughts?"
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 3: THE OPPORTUNITY ==================== -->
+<section class="slide slide--dark" id="slide-2">
+  <div class="container text-center">
+    <p class="label gold fade-up" style="margin-bottom:0.8rem">The Opportunity</p>
+    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">Pets aren't a perk.<br><em class="gold">They're the economy.</em></h2>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.55);max-width:650px;margin:1rem auto 2.5rem">The $157 billion pet industry isn't slowing down. The next generation of shoppers is making their values clear.</p>
+    <div class="opp-stats fade-up stagger-3">
+      <div class="opp-stat">
+        <div class="val">66%</div>
+        <div class="lbl">of Canadian households own a pet in 2025</div>
+      </div>
+      <div class="opp-stat">
+        <div class="val">$6.7B</div>
+        <div class="lbl">Canadian pet retail market — growing 10% CAGR</div>
+      </div>
+      <div class="opp-stat">
+        <div class="val">30%</div>
+        <div class="lbl">of Gen Z say pet-friendliness is critical to their retail choices</div>
+      </div>
+    </div>
+    <div class="insight-list fade-up stagger-4">
+      <div class="insight-item">47% of pet product buyers still shop in-store — they want to bring their dog with them</div>
+      <div class="insight-item">Pet humanization is the defining consumer trend of the decade. Pets are family, full stop.</div>
+      <div class="insight-item">Malls with pet-friendly programs report measurable increases in dwell time and repeat visits</div>
+      <div class="insight-item">Royalmount was celebrated for being dog-friendly when it opened. That goodwill is worth reclaiming.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 4: THE REAL PROBLEM ==================== -->
+<section class="slide slide--dark" id="slide-3">
+  <div class="container">
+    <p class="label gold fade-up" style="margin-bottom:0.8rem">The Real Problem</p>
+    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">The ban wasn't the failure.<br><em class="gold">The missing infrastructure was.</em></h2>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.55);max-width:680px">Responsible dog owners follow rules when they have the tools to do so. Most don't skip cleanup out of malice — they skip it because there was no station, no bag, no obvious place to go.</p>
+    <div class="reframe-grid fade-up stagger-3">
+      <div class="reframe-col">
+        <h3 style="color:rgba(220,80,80,0.85)">The old approach</h3>
+        <ul class="vs-list">
+          <li class="vs-item bad">Assume owners bring their own bags — most forget</li>
+          <li class="vs-item bad">No designated relief areas — dogs go wherever</li>
+          <li class="vs-item bad">No signage reinforcing expectations</li>
+          <li class="vs-item bad">No consequences visible, no social nudge</li>
+          <li class="vs-item bad">Mall staff deal with cleanup reactively</li>
+          <li class="vs-item bad">Ban the dogs when it gets bad enough</li>
+        </ul>
+      </div>
+      <div class="reframe-col">
+        <h3 style="color:var(--green-light)">The new approach</h3>
+        <ul class="vs-list">
+          <li class="vs-item good">Earth Rated stations at every entrance — bags always available</li>
+          <li class="vs-item good">Designated relief zones with clear signage and astroturf</li>
+          <li class="vs-item good">Behavioral nudge: "Most dog owners here clean up. Be one of them."</li>
+          <li class="vs-item good">The Royalmount Dog Code — a community standard, not a rule</li>
+          <li class="vs-item good">ATD location as certified welcome anchor</li>
+          <li class="vs-item good">Dogs welcome again. Problem solved at the source.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="truth-box fade-up stagger-4">
+      <p>"People need concrete steps and protocols to follow. It's still not second nature — and that's not their fault."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 5: THE SOLUTION ==================== -->
+<section class="slide slide--dark" id="slide-4">
+  <div class="container text-center">
+    <p class="label gold fade-up" style="margin-bottom:0.8rem">The Solution</p>
+    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">The Royalmount<br><em class="gold">Pet Relief Program</em></h2>
+    <p class="body-lg solution-intro fade-up stagger-2">Three interconnected systems that turn a ban reversal into a landmark moment for pet-friendly retail in Canada.</p>
+    <div class="solution-cards fade-up stagger-3">
+      <div class="sol-card">
+        <span class="s-icon">🗑️</span>
+        <h3>Relief Station Network</h3>
+        <p>Earth Rated-branded waste stations at every mall entrance and key high-traffic zones. Always stocked.</p>
+        <ul>
+          <li>Premium bag dispensers (Earth Rated)</li>
+          <li>Waste bins with odor-control liners</li>
+          <li>Hand sanitizer station</li>
+          <li>QR code linking to the Dog Code</li>
+        </ul>
+      </div>
+      <div class="sol-card featured">
+        <span class="s-icon">🐾</span>
+        <h3>The ATD Welcome Zone</h3>
+        <p>The flagship station — a dedicated outdoor relief area adjacent to ATD's Royalmount location.</p>
+        <ul>
+          <li>Astroturf relief pad with drainage</li>
+          <li>Water station for dogs</li>
+          <li>Full Earth Rated station</li>
+          <li>ATD staff presence to welcome owners</li>
+          <li>Dog drop-off / pickup for daycare transport</li>
+        </ul>
+      </div>
+      <div class="sol-card">
+        <span class="s-icon">📋</span>
+        <h3>The Royalmount Dog Code</h3>
+        <p>A simple, visible community commitment that dog owners acknowledge when entering.</p>
+        <ul>
+          <li>5-rule pledge at every entrance</li>
+          <li>Shareable digital version for Instagram</li>
+          <li>Welcome bag with courtesy card on first visit</li>
+          <li>Seasonal campaigns with Earth Rated</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 6: THE STATION ==================== -->
+<section class="slide slide--dark" id="slide-5">
+  <div class="container">
+    <div class="station-layout">
+      <div class="fade-up">
+        <div class="station-visual">
+          <div class="station-main-icon">🐕</div>
+          <div class="station-title">Earth Rated Station</div>
+          <div class="station-tag">Branded · Always-stocked · Premium</div>
+          <div class="station-components">
+            <div class="comp">🧻 Bag Dispenser</div>
+            <div class="comp">🗑️ Waste Bin</div>
+            <div class="comp">🧴 Hand Sanitizer</div>
+            <div class="comp">📱 QR Dog Code</div>
+            <div class="comp">💧 Water Bowl</div>
+            <div class="comp">🪧 Etiquette Sign</div>
+          </div>
+          <p class="station-note">Earth Rated restocks all stations. Zero ongoing burden on Royalmount operations.</p>
+        </div>
+      </div>
+      <div class="station-details fade-up stagger-2">
+        <div>
+          <p class="label gold" style="margin-bottom:0.8rem">Station Design</p>
+          <h2 class="heading-md" style="margin-bottom:0.5rem">What every station<br><em class="gold">looks like.</em></h2>
+        </div>
+        <div class="detail-block">
+          <h4>Proposed Locations</h4>
+          <div class="locations-grid">
+            <div class="loc-pill primary">🏠 ATD Welcome Zone (flagship)</div>
+            <div class="loc-pill">🚪 Main West Entrance</div>
+            <div class="loc-pill">🚪 Main East Entrance</div>
+            <div class="loc-pill">🅿️ Garage Level P1</div>
+            <div class="loc-pill">🛍️ Retail Corridor</div>
+            <div class="loc-pill">🍽️ Food Hall Perimeter</div>
+          </div>
+        </div>
+        <div class="detail-block">
+          <h4>Brand Presence</h4>
+          <p>Co-branded signage at every station: Earth Rated × ATD × Royalmount. A hygiene solution that becomes a visible statement that Royalmount cares.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Maintenance</h4>
+          <p>Earth Rated handles all restocking and upkeep. Royalmount's role is to say yes — operations are fully managed by the partnership.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 7: THE PARTNERS ==================== -->
+<section class="slide slide--dark" id="slide-6">
+  <div class="container">
+    <p class="label gold fade-up" style="margin-bottom:0.8rem">The Partnership</p>
+    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:2rem">Two Montreal brands.<br><em class="gold">One shared mission.</em></h2>
+    <div class="partners-split fade-up stagger-2">
+      <div class="partner-card atd">
+        <div class="p-logo">ATD Clubhouse 🐾</div>
+        <div class="p-tag">All The Dogs Clubhouse · Montreal</div>
+        <ul class="p-points">
+          <li>776 active dog owner clients in Montreal — the community you want back</li>
+          <li>Full-service facility: daycare, grooming, boarding, training, transport</li>
+          <li>Royalmount-adjacent location — natural anchor for the welcome zone</li>
+          <li>$392K annual revenue run rate, +78.5% YoY — a business the community trusts</li>
+          <li>Operational expertise: we manage dogs and their owners every single day</li>
+        </ul>
+      </div>
+      <div class="partner-card er">
+        <div class="p-logo" style="color:#52b788">Earth Rated 🌱</div>
+        <div class="p-tag">World's #1 Dog Waste Brand · B Corp · Montreal-Born</div>
+        <ul class="p-points">
+          <li>Certified B Corporation — leading with purpose, not just profit</li>
+          <li>Sold in 40+ countries, trusted by millions of dog owners globally</li>
+          <li>Premium lavender-scented, 99% leak-proof bags — the category standard</li>
+          <li>Brand that Montreal's pet community already loves and uses daily</li>
+          <li>Experience deploying station programs in retail and public spaces</li>
+          <li>Committed at the partnership level — Abby confirmed, April 7 is go time</li>
+        </ul>
+      </div>
+    </div>
+    <div class="synergy-bar fade-up stagger-3">
+      <div class="icon">🤝</div>
+      <p>"Together we bring the infrastructure, brand trust, community relationships, and operational know-how. Royalmount brings the space and the opportunity to lead."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 8: THE DOG CODE ==================== -->
+<section class="slide slide--dark" id="slide-7">
+  <div class="container">
+    <p class="label gold fade-up" style="margin-bottom:0.8rem">The Royalmount Dog Code</p>
+    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">Simple rules.<br><em class="gold">Real results.</em></h2>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.55);max-width:640px;margin-bottom:1.5rem">Behavior changes when expectations are clear, tools are available, and the community reinforces the norm. Here's how it works.</p>
+    <div class="protocol-steps fade-up stagger-3">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-icon">📋</div>
+        <h4>Acknowledge the Code</h4>
+        <p>Scan QR or receive card at entrance. Takes 10 seconds. Sets the expectation.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-icon">🧻</div>
+        <h4>Grab Your Bags</h4>
+        <p>Free Earth Rated bags at every station. No excuse to be unprepared.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-icon">🐕</div>
+        <h4>Use the Relief Zone</h4>
+        <p>Designated outdoor areas before entering. The right behavior made easy.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-icon">✅</div>
+        <h4>Clean Up. Always.</h4>
+        <p>Bins everywhere. Social signage makes it a community norm, not just a rule.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-icon">🌟</div>
+        <h4>Be an Ambassador</h4>
+        <p>Owners who use the program become the program. Community owns the standard.</p>
+      </div>
+    </div>
+    <div class="protocol-note fade-up stagger-4">
+      <strong>The behavioral science:</strong> Most people don't violate norms out of malice — the friction of doing the right thing is too high. Lower the friction (free bags, visible bins, clear zones), add social reinforcement, and compliance approaches near-100%. This is the same model that transformed public smoking behavior.
+    </div>
+    <div class="enforce-grid fade-up stagger-5">
+      <div class="enf"><div class="e-icon">🪧</div><h4>Signage System</h4><p>Positive framing throughout. "Dogs and their humans welcome here."</p></div>
+      <div class="enf"><div class="e-icon">📱</div><h4>Digital Dog Code</h4><p>Shareable on Instagram. Turns compliance into community identity.</p></div>
+      <div class="enf"><div class="e-icon">🔄</div><h4>Quarterly Reviews</h4><p>ATD + Royalmount assess program health and adjust every quarter.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 9: THE BUSINESS CASE ==================== -->
+<section class="slide slide--cream" id="slide-8">
+  <div class="container">
+    <p class="label fade-up" style="margin-bottom:0.8rem;color:var(--gold-dark)">The Business Case</p>
+    <h2 class="heading-lg fade-up stagger-1" style="color:var(--black);margin-bottom:2rem">What Royalmount<br><em style="color:var(--gold-dark)">wins back.</em></h2>
+    <div class="biz-grid fade-up stagger-2">
+      <div>
+        <h3>For Royalmount</h3>
+        <div class="biz-items">
+          <div class="biz-item highlight">
+            <div class="bi-title">PR Reversal — Immediate</div>
+            <div class="bi-body">Announcing the program kills the negative news cycle. "We listened. We built the solution." CTV, Gazette, CityNews will cover it again — this time positively.</div>
+          </div>
+          <div class="biz-item">
+            <div class="bi-title">Pet Owner Foot Traffic Returns</div>
+            <div class="bi-body">66% of Montreal households own a pet. The customers you lost are waiting to come back — they just need a reason to trust the experience again.</div>
+          </div>
+          <div class="biz-item">
+            <div class="bi-title">First-Mover Differentiation</div>
+            <div class="bi-body">No other mall in Canada runs a formal pet relief infrastructure program. Royalmount becomes the benchmark. That's a competitive advantage worth far more than the stations cost.</div>
+          </div>
+          <div class="biz-item">
+            <div class="bi-title">Gen Z + Millennial Goodwill</div>
+            <div class="bi-body">The most valuable retail demographic makes purchasing decisions based on how brands treat them. This sends a clear signal about what Royalmount stands for.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3>The Deal Structure</h3>
+        <div class="biz-items">
+          <div class="biz-item highlight">
+            <div class="bi-title">Zero Cost to Royalmount</div>
+            <div class="bi-body">Earth Rated supplies and maintains all stations. ATD manages the welcome zone adjacency. Royalmount provides the space and the endorsement — the partnership handles everything else.</div>
+          </div>
+          <div class="biz-item">
+            <div class="bi-title">A Permanent Solution</div>
+            <div class="bi-body">The infrastructure is permanent. The protocol is self-reinforcing. Once the community adopts it, enforcement becomes social — not operational.</div>
+          </div>
+          <div class="biz-item">
+            <div class="bi-title">The ATD Anchor Effect</div>
+            <div class="bi-body">An ATD Royalmount location drives a new visitor type: the dog owner who drops off their dog, shops, returns to pick up. That's 2–3 additional mall visits per week per family.</div>
+          </div>
+          <div class="biz-item">
+            <div class="bi-title">The Headline You Want</div>
+            <div class="bi-body">CEO Andrew Lutfy said Royalmount is in a "startup phase." This is a startup-phase win — the kind of bold, values-driven move that defines a brand in its formative years.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 10: THE ASK ==================== -->
+<section class="slide slide--dark" id="slide-9">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+      <div>
+        <p class="label gold fade-up" style="margin-bottom:0.8rem">Next Steps</p>
+        <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">What we're asking.<br><em class="gold">What we commit to.</em></h2>
+        <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.5);margin-bottom:0">This program can be operational before summer — the season when dog owners flood Montreal's outdoor destinations.</p>
+        <div class="timeline fade-up stagger-3">
+          <div class="tl-item">
+            <div class="tl-dot">APR<br>7</div>
+            <div class="tl-body"><h4>Today — Concept Approval</h4><p>Alignment on vision, station locations, and partnership terms.</p></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">APR<br>14</div>
+            <div class="tl-body"><h4>Week 1 — Site Walkthrough</h4><p>ATD + Earth Rated do a physical walk with Royalmount ops. Finalize 6 locations and welcome zone footprint.</p></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">APR<br>28</div>
+            <div class="tl-body"><h4>Week 3 — Infrastructure Live</h4><p>Earth Rated stations deployed. ATD welcome zone operational. Signage and Dog Code live.</p></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">MAY<br>1</div>
+            <div class="tl-body"><h4>Program Launch — Public Announcement</h4><p>Royalmount announces ban reversal. Press release, Instagram campaign, media outreach. ATD + Earth Rated amplify across communities.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up stagger-2">
+        <p class="label gold" style="margin-bottom:1.5rem">What We're Asking For</p>
+        <div class="ask-items">
+          <div class="ask-item">
+            <div class="ask-num">01</div>
+            <h4>Space Approval</h4>
+            <p>Designate 6 station locations and approve the ATD Welcome Zone footprint adjacent to our Royalmount location.</p>
+          </div>
+          <div class="ask-item">
+            <div class="ask-num">02</div>
+            <h4>Program Endorsement</h4>
+            <p>Joint announcement from Royalmount, ATD, and Earth Rated. Your name makes this a story.</p>
+          </div>
+          <div class="ask-item">
+            <div class="ask-num">03</div>
+            <h4>Dog Code Integration</h4>
+            <p>Include the Dog Code in the welcome experience — signage, digital comms, and FAQ page.</p>
+          </div>
+          <div class="ask-item">
+            <div class="ask-num">04</div>
+            <h4>Quarterly Partnership</h4>
+            <p>A standing quarterly review between Royalmount, ATD, and Earth Rated to keep the program healthy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 11: CLOSE ==================== -->
+<section class="slide close-slide" id="slide-10">
+  <div class="close-bg" role="img" aria-label="ATD Clubhouse"></div>
+  <div class="close-overlay"></div>
+  <div class="close-content">
+    <p class="label gold fade-up" style="margin-bottom:1rem">ATD Clubhouse × Earth Rated × Royalmount</p>
+    <h2 class="heading-xl fade-up stagger-1">Pets are<br><em class="gold">family.</em><br>Let's act like it.</h2>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.5);max-width:550px;margin:1.5rem auto 2.5rem">Royalmount was built to be Montreal's most ambitious destination. The ban was a symptom of missing infrastructure — not a statement about your values. We built the solution. All we need is your yes.</p>
+    <div class="close-contacts fade-up stagger-3">
+      <div class="close-contact">
+        <div class="c-name">Salomon Naroditsky</div>
+        <div class="c-role">ATD Clubhouse · Founder</div>
+      </div>
+      <div class="close-contact">
+        <div class="c-name">Abby</div>
+        <div class="c-role">Earth Rated · Partnership Lead</div>
+      </div>
+    </div>
+    <p class="conf-note fade-up stagger-4">Confidential — For Discussion Purposes Only — April 7, 2026</p>
+  </div>
+</section>
+
+<script>
+(function() {
+  'use strict';
+
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.nav-dot');
+
+  // Scroll-based active dot
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        const index = Array.from(slides).indexOf(entry.target);
+        dots.forEach(function(d, i) {
+          d.classList.toggle('active', i === index);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  slides.forEach(function(slide) { observer.observe(slide); });
+
+  // Dot click navigation
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      const i = parseInt(this.dataset.slide);
+      slides[i].scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Arrow key navigation
+  let currentSlide = 0;
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      currentSlide = Math.min(currentSlide + 1, slides.length - 1);
+      slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      currentSlide = Math.max(currentSlide - 1, 0);
+      slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  // Keep currentSlide in sync
+  const syncObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        currentSlide = Array.from(slides).indexOf(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(function(slide) { syncObserver.observe(slide); });
+
+  // Fade-up on scroll
+  const fadeObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(function(el) {
+    fadeObserver.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
