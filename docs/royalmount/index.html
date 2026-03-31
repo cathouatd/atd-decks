@@ -69,7 +69,7 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
 /* ==================== SLIDE 1: HERO ==================== */
 .hero{position:relative;justify-content:flex-end;align-items:center;height:100vh;height:100dvh;max-height:100dvh}
 .hero-bg{position:absolute;inset:0;background:url('https://www.atdclubhouse.com/cdn/shop/files/EDIT83.webp?v=1731269572&width=2200') center/cover no-repeat;background-color:#1a1510}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.3) 0%,rgba(10,10,10,0.6) 40%,rgba(10,10,10,0.94) 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.15) 0%,rgba(10,10,10,0.45) 40%,rgba(10,10,10,0.95) 100%)}
 .hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 clamp(1.5rem,5vw,4rem) 3rem;width:100%;max-width:900px}
 .hero-eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
 .hero-tagline{font-size:clamp(2.8rem,8vw,7.5rem);font-family:var(--heading);font-weight:800;letter-spacing:0.02em;color:var(--white);margin-bottom:0.2em;line-height:0.95}
@@ -97,6 +97,8 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
 .stat-box{margin-top:1.5rem;padding:1.5rem 2rem;background:rgba(228,219,211,0.07);border:1px solid rgba(228,219,211,0.2);border-radius:4px;text-align:center}
 .stat-box .big{font-family:var(--heading);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
 .stat-box .lbl{font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:0.4rem}
+.moment-closer{margin-top:2rem;padding:1.5rem 2rem;background:rgba(228,219,211,0.06);border:1px solid rgba(228,219,211,0.18);border-radius:4px;text-align:center}
+.moment-closer p{font-family:var(--heading);font-size:clamp(1.1rem,2vw,1.6rem);font-style:italic;color:var(--accent);line-height:1.4}
 @media(max-width:768px){.moment-grid{grid-template-columns:1fr}}
 
 /* ==================== SLIDE 3: THE OPPORTUNITY ==================== */
@@ -181,7 +183,7 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
 .step p{font-size:0.72rem;font-weight:300;color:rgba(255,255,255,0.45);line-height:1.4}
 .protocol-note{padding:1.3rem 1.8rem;background:rgba(82,183,136,0.06);border:1px solid rgba(82,183,136,0.2);border-radius:4px;font-size:clamp(0.85rem,1.2vw,0.95rem);font-weight:300;line-height:1.55;color:rgba(255,255,255,0.7)}
 .protocol-note strong{color:var(--green-light);font-weight:600}
-.enforce-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.2rem}
+.enforce-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.2rem}
 .enf{padding:1.1rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:4px;text-align:center}
 .enf .e-icon{font-size:1.6rem;margin-bottom:0.4rem}
 .enf h4{font-size:0.78rem;font-weight:600;color:var(--white);margin-bottom:0.25rem}
@@ -213,12 +215,14 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
 .ask-item .ask-num{font-family:var(--heading);font-size:1.8rem;font-weight:800;color:rgba(228,219,211,0.25);line-height:1;margin-bottom:0.4rem;font-variant-numeric:tabular-nums}
 .ask-item h4{font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.3rem}
 .ask-item p{font-size:0.78rem;font-weight:300;color:rgba(255,255,255,0.48);line-height:1.45}
+.ask-closer{margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(228,219,211,0.06);border:1px solid rgba(228,219,211,0.22);border-radius:4px;text-align:center}
+.ask-closer p{font-family:var(--heading);font-size:clamp(1.1rem,2vw,1.5rem);font-style:italic;color:var(--accent);line-height:1.4}
 @media(max-width:768px){.ask-layout{grid-template-columns:1fr;gap:2rem}.ask-items{grid-template-columns:1fr}.timeline::before{left:18px}}
 
 /* ==================== SLIDE 11: CLOSE ==================== */
 .close-slide{position:relative;justify-content:center;align-items:center;text-align:center}
 .close-bg{position:absolute;inset:0;background:url('https://www.atdclubhouse.com/cdn/shop/files/preview_images/cf66cb2a63cd4500be31e79647597b8d.thumbnail.0000000000_1100x.jpg?v=1731362531') center/cover no-repeat;background-color:#1a1510}
-.close-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.5),rgba(10,10,10,0.9))}
+.close-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.5),rgba(10,10,10,0.92))}
 .close-content{position:relative;z-index:2;padding:0 clamp(1.5rem,5vw,4rem)}
 .close-cta{margin-top:2.5rem;display:flex;flex-direction:column;gap:0.8rem;align-items:center}
 .close-contact{padding:1rem 2.2rem;background:rgba(10,10,10,0.6);border:1px solid rgba(228,219,211,0.3);border-radius:4px;backdrop-filter:blur(8px)}
@@ -250,26 +254,26 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
 
 <!-- ==================== SLIDE 1: HERO ==================== -->
 <section class="slide hero" id="slide-0">
-  <div class="hero-bg" role="img" aria-label="ATD Clubhouse facility"></div>
+  <div class="hero-bg" role="img" aria-label="ATD Clubhouse dogs"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow fade-up">A partnership proposal</p>
     <h1 class="hero-tagline fade-up stagger-1">Bring the<br><em>Dogs Back.</em></h1>
-    <p class="hero-subtitle fade-up stagger-2">A turnkey pet relief program that makes Royalmount the most dog-friendly destination in Canada.</p>
+    <p class="hero-subtitle fade-up stagger-2">The solution Montreal has been waiting for.</p>
     <div class="hero-partners fade-up stagger-3">
       <div class="partner-block">
         <div class="partner-name logo-atd" style="color:var(--accent)">ATD Clubhouse</div>
         <div class="partner-role">Operations + Design</div>
       </div>
-      <div style="color:rgba(228,219,211,0.4);font-size:1.5rem">+</div>
+      <div style="color:rgba(228,219,211,0.4);font-size:1.5rem">&times;</div>
       <div class="partner-block">
         <div class="partner-name logo-er" style="color:#52b788">earth rated</div>
         <div class="partner-role">Supplies + Brand</div>
       </div>
-      <div style="color:rgba(228,219,211,0.4);font-size:1.5rem">+</div>
+      <div style="color:rgba(228,219,211,0.4);font-size:1.5rem">&times;</div>
       <div class="partner-block">
         <div class="partner-name logo-rm" style="color:rgba(255,255,255,0.85)">ROYALMOUNT</div>
-        <div class="partner-role">The Venue + The Vision</div>
+        <div class="partner-role">The Stage</div>
       </div>
     </div>
   </div>
@@ -282,51 +286,55 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
     <div class="moment-grid">
       <div>
         <p class="label accent fade-up" style="margin-bottom:0.8rem">The Moment</p>
-        <h2 class="heading-lg fade-up stagger-1">Montreal<br>spoke up.<br><em class="accent">Loudly.</em></h2>
-        <p class="body-md fade-up stagger-2" style="color:rgba(255,255,255,0.55);margin-top:1rem">On March 25, Royalmount banned dogs. It was the responsible call given the situation. But the city's reaction told a bigger story. This wasn't outrage for the sake of it. These are people who love Royalmount and want to bring their whole family there, dogs included.</p>
+        <h2 class="heading-lg fade-up stagger-1">You made a<br>hard call.<br><em class="accent">The city responded.</em></h2>
+        <p class="body-md fade-up stagger-2" style="color:rgba(255,255,255,0.55);margin-top:1rem">On March 25, Royalmount banned dogs. Given the waste situation, it was a defensible decision. But what happened next revealed something important: Montreal did not want the dogs gone. They wanted someone to fix the problem.</p>
         <div class="stat-box fade-up stagger-3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center;padding:1.5rem">
-          <div><div class="big">50K+</div><div class="lbl">impressions across platforms</div></div>
-          <div><div class="big">280+</div><div class="lbl">Reddit comments in 5 days</div></div>
-          <div><div class="big">5</div><div class="lbl">major media outlets covered it</div></div>
+          <div><div class="big">50K+</div><div class="lbl">impressions in days</div></div>
+          <div><div class="big">280+</div><div class="lbl">Reddit comments</div></div>
+          <div><div class="big">5</div><div class="lbl">major media outlets</div></div>
         </div>
+        <p class="body-md fade-up stagger-4" style="color:rgba(255,255,255,0.4);margin-top:1rem;font-size:0.78rem">CTV News &middot; Montreal Gazette &middot; CityNews &middot; Timeout Montreal &middot; Virgin Radio</p>
         <div class="pull-quote fade-up stagger-4">
-          "The ban makes sense given the mess. But I hope it's temporary. Build the infrastructure first, then hold people accountable."
-          <cite>r/montreal, top-voted comment</cite>
+          "The ban makes sense given the mess. But I hope it is temporary. Build the infrastructure first, then hold people accountable."
+          <cite>Top-voted comment, r/montreal</cite>
         </div>
       </div>
       <div>
-        <p class="label accent fade-up" style="margin-bottom:0.8rem">7 Real Voices From Montreal</p>
+        <p class="label accent fade-up" style="margin-bottom:0.8rem">What Montreal Actually Said</p>
         <ul class="reaction-list fade-up stagger-2">
           <li class="reaction-item">
-            <strong>Instagram / Frustrated owner</strong>
-            "This was the only place that allowed me to bring my dog, whom I care for 24/7. It's incredibly unfair that responsible owners get penalized because others can't be respectful."
+            <strong>Instagram / Dog owner</strong>
+            "This was the only place I could bring my dog. It is incredibly unfair that responsible owners get punished because others cannot be respectful."
           </li>
           <li class="reaction-item">
-            <strong>Instagram / Dog parent</strong>
-            "My dog is part of my family. This feels like we're being told we're not welcome. We spend money here too."
+            <strong>Instagram / Loyal shopper</strong>
+            "My dog is part of my family. Being told we are not welcome? That stings. We spend money here too."
           </li>
           <li class="reaction-item">
             <strong>Instagram / The solution seeker</strong>
-            "Add cleanup stations. Make it easy. Make it impossible to have an excuse. Don't punish everyone."
+            "Add cleanup stations. Make it easy. Make it impossible to have an excuse. Do not punish everyone."
           </li>
           <li class="reaction-item">
-            <strong>Reddit r/montreal / 280+ comments</strong>
-            "This is going to hurt their foot traffic. Dog owners are some of the most loyal shoppers and they just alienated all of them."
+            <strong>Reddit / r/montreal, 280+ comments</strong>
+            "This will hurt their foot traffic. Dog owners are some of the most loyal shoppers and they just alienated all of them."
           </li>
           <li class="reaction-item">
-            <strong>Facebook / West Island Community MTL / 40+ comments</strong>
+            <strong>Facebook / West Island Community MTL</strong>
             "Always one person who ruins it for everyone. There should have been stations and rules from day one."
           </li>
           <li class="reaction-item">
-            <strong>Montreal Only Instagram / Viral post</strong>
-            "Only service dogs are welcome at Royalmount. No other animals permitted anymore. What are your thoughts?"
+            <strong>Montreal Only / Instagram</strong>
+            "No dogs allowed at Royalmount anymore. Only service animals. What are your thoughts?"
           </li>
           <li class="reaction-item">
-            <strong>Reddit r/montreal / Empathetic take</strong>
+            <strong>Reddit / Empathetic take</strong>
             "I get why they did it. But banning dogs entirely? There has to be a middle ground. Give people the tools to do the right thing."
           </li>
         </ul>
       </div>
+    </div>
+    <div class="moment-closer fade-up stagger-5">
+      <p>Montreal did not want the ban. They wanted a solution.</p>
     </div>
   </div>
 </section>
@@ -335,16 +343,16 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
 <section class="slide slide--dark" id="slide-2">
   <div class="container text-center">
     <p class="label accent fade-up" style="margin-bottom:0.8rem">The Opportunity</p>
-    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">Pets aren't a perk.<br><em class="accent">They're the economy.</em></h2>
-    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.55);max-width:650px;margin:1rem auto 2.5rem">The pet industry hit $157 billion globally and it keeps growing. For Royalmount, this is not a niche audience. It is the audience.</p>
+    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">Pets are not a perk.<br><em class="accent">They are the economy.</em></h2>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.55);max-width:650px;margin:1rem auto 2.5rem">Gen Z does not shop the way their parents did. They choose where to spend based on values, experience, and whether their whole family is welcome. That includes the dog.</p>
     <div class="opp-stats fade-up stagger-3">
       <div class="opp-stat">
         <div class="val">66%</div>
-        <div class="lbl">of Canadian households own a pet (2025)</div>
+        <div class="lbl">of Canadian households own a pet</div>
       </div>
       <div class="opp-stat">
         <div class="val">$6.7B</div>
-        <div class="lbl">Canadian pet retail market, growing 10% per year</div>
+        <div class="lbl">Canadian pet retail, growing 10% annually</div>
       </div>
       <div class="opp-stat">
         <div class="val">30%</div>
@@ -352,10 +360,10 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
       </div>
     </div>
     <div class="insight-list fade-up stagger-4">
-      <div class="insight-item">47% of pet product buyers still shop in-store. They want to bring their dog with them.</div>
-      <div class="insight-item">Pet humanization is the defining consumer trend of the decade. Pets are family, full stop.</div>
-      <div class="insight-item">Malls with pet-friendly programs report measurable increases in dwell time and repeat visits.</div>
-      <div class="insight-item">Royalmount earned praise for welcoming dogs on day one. That goodwill still exists. It just needs a reason to come back.</div>
+      <div class="insight-item">47% of pet product buyers still shop in-store. They want the dog with them.</div>
+      <div class="insight-item">Pet humanization is the defining consumer trend of this decade. Pets are family.</div>
+      <div class="insight-item">Pet-friendly retail spaces report measurable gains in dwell time and repeat visits.</div>
+      <div class="insight-item">Royalmount was celebrated for welcoming dogs when it opened. That equity is not gone. It is waiting to be reclaimed.</div>
     </div>
   </div>
 </section>
@@ -364,34 +372,34 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
 <section class="slide slide--dark" id="slide-3">
   <div class="container">
     <p class="label accent fade-up" style="margin-bottom:0.8rem">The Real Problem</p>
-    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">It was never<br>about the dogs.<br><em class="accent">It was the missing infrastructure.</em></h2>
-    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.55);max-width:680px">Responsible dog owners follow rules when they have the tools to do so. Most people don't skip cleanup out of carelessness. They skip it because there are no bags, no bins, and no obvious place to go.</p>
+    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">The dogs were never<br>the problem.</h2>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.55);max-width:680px">Irresponsible owners were. But even they only misbehave when there is no infrastructure to guide them. No bags, no bins, no designated areas, no clear expectations. People default to the path of least resistance. If that path includes walking past a mess, they will walk past it.</p>
     <div class="reframe-grid fade-up stagger-3">
       <div class="reframe-col">
-        <h3 style="color:rgba(220,80,80,0.85)">What was happening</h3>
+        <h3 style="color:rgba(220,80,80,0.85)">Before: No infrastructure</h3>
         <ul class="vs-list">
-          <li class="vs-item bad">Assumed owners bring their own bags. Most forget.</li>
-          <li class="vs-item bad">No designated relief areas. Dogs go wherever.</li>
-          <li class="vs-item bad">No signage reinforcing expectations.</li>
-          <li class="vs-item bad">No visible consequences, no social nudge.</li>
-          <li class="vs-item bad">Mall staff handle cleanup reactively.</li>
-          <li class="vs-item bad">Ban the dogs when it gets bad enough.</li>
+          <li class="vs-item bad">Assumed owners would bring their own bags. Most forgot.</li>
+          <li class="vs-item bad">No designated relief areas. Dogs went wherever.</li>
+          <li class="vs-item bad">No signage. No expectations set at the door.</li>
+          <li class="vs-item bad">No social nudge. No visible community standard.</li>
+          <li class="vs-item bad">Cleanup was reactive. Staff chased problems.</li>
+          <li class="vs-item bad">When it got bad enough, ban the dogs.</li>
         </ul>
       </div>
       <div class="reframe-col">
-        <h3 style="color:var(--green-light)">What we build instead</h3>
+        <h3 style="color:var(--green-light)">After: Built for success</h3>
         <ul class="vs-list">
-          <li class="vs-item good">ATD x Earth Rated stations at every entrance. Bags, wipes, and pads always stocked.</li>
-          <li class="vs-item good">Designated relief zones with clear signage and turf pads.</li>
-          <li class="vs-item good">Behavioral nudge: "Most dog owners here clean up. Be one of them."</li>
-          <li class="vs-item good">The Royalmount Dog Code. A community standard, not a rule.</li>
-          <li class="vs-item good">ATD Welcome Zone as a certified anchor for the program.</li>
-          <li class="vs-item good">Dogs welcome again. Problem solved at the source.</li>
+          <li class="vs-item good">ATD x Earth Rated stations at every entrance. Bags, wipes, pads stocked.</li>
+          <li class="vs-item good">Designated relief zones with turf, drainage, and clear signage.</li>
+          <li class="vs-item good">The Dog Code sets expectations before anyone walks in.</li>
+          <li class="vs-item good">Social norm signage: "Most dog owners here clean up. Join them."</li>
+          <li class="vs-item good">ATD Welcome Zone as the flagship anchor.</li>
+          <li class="vs-item good">Dogs welcome. Problem solved at the root.</li>
         </ul>
       </div>
     </div>
     <div class="truth-box fade-up stagger-4">
-      <p>"People need concrete steps and protocols to follow. Cleaning up after a dog in public is still not second nature for most people, and that is not their fault."</p>
+      <p>"Give people the tools. They will do the right thing."</p>
     </div>
   </div>
 </section>
@@ -401,40 +409,40 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
   <div class="container text-center">
     <p class="label accent fade-up" style="margin-bottom:0.8rem">The Solution</p>
     <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">The Royalmount<br><em class="accent">Pet Relief Program</em></h2>
-    <p class="body-lg solution-intro fade-up stagger-2">Three connected systems that turn a ban reversal into a landmark moment for pet-friendly retail in Canada.</p>
+    <p class="body-lg solution-intro fade-up stagger-2">Not a band-aid. A complete system. Three connected pillars that turn a ban reversal into the defining moment for pet-friendly retail in Canada.</p>
     <div class="solution-cards fade-up stagger-3">
       <div class="sol-card">
-        <span class="s-icon">🗑️</span>
+        <span class="s-icon">&#x1f6ce;&#xfe0f;</span>
         <h3>Relief Station Network</h3>
-        <p>Co-branded ATD x Earth Rated stations at every entrance. Bags, wipes, turf pads, and bins. Always stocked. Always clean.</p>
+        <p>Co-branded ATD x Earth Rated stations deployed at every entrance. No owner walks in without what they need.</p>
         <ul>
-          <li>Earth Rated bags, wipes, and absorbent pads</li>
+          <li>Earth Rated bags, wipes, absorbent pads</li>
           <li>Drainage-equipped turf relief pads</li>
           <li>ATD-designed cleaning SOP for janitorial staff</li>
           <li>Odor-control protocols from our own facility</li>
         </ul>
       </div>
       <div class="sol-card featured">
-        <span class="s-icon">🐾</span>
+        <span class="s-icon">&#x1f43e;</span>
         <h3>The ATD Welcome Zone</h3>
-        <p>The flagship station adjacent to ATD's Royalmount location. The most complete pet relief setup in the mall.</p>
+        <p>The flagship station outside our Royalmount location. Staffed, equipped, and visible. The front door of the program.</p>
         <ul>
-          <li>Professional astroturf with drainage (same as our daycare)</li>
-          <li>Water station for dogs</li>
+          <li>Professional astroturf with drainage (same system we run daily)</li>
+          <li>Fresh water station for dogs</li>
           <li>Full Earth Rated consumable station</li>
-          <li>ATD staff on hand to welcome owners and dogs</li>
+          <li>ATD staff on site to welcome owners</li>
           <li>Daycare drop-off and pickup point</li>
         </ul>
       </div>
       <div class="sol-card">
-        <span class="s-icon">📋</span>
+        <span class="s-icon">&#x1f4dc;</span>
         <h3>The Royalmount Dog Code</h3>
-        <p>A simple community pledge displayed at every entrance. Five steps. Sets the standard before anyone walks in.</p>
+        <p>A community commitment, not a rule book. Five clear steps displayed at every entrance. Sets the standard before anyone walks in.</p>
         <ul>
           <li>5-step pledge posted at every entrance</li>
-          <li>Shareable digital version for Instagram</li>
+          <li>Shareable digital version for social media</li>
           <li>Welcome bag with Earth Rated courtesy pack</li>
-          <li>Seasonal campaigns and community events</li>
+          <li>Quarterly review and seasonal campaigns</li>
         </ul>
       </div>
     </div>
@@ -447,20 +455,20 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
     <div class="station-layout">
       <div class="fade-up">
         <div class="station-visual">
-          <div class="station-main-icon">🐕</div>
+          <div class="station-main-icon">&#x1f415;</div>
           <div class="station-title">ATD x Earth Rated Station</div>
           <div class="station-tag">Co-branded / Always stocked / Premium</div>
           <div class="station-components">
-            <div class="comp">🧻 Earth Rated Bags</div>
-            <div class="comp">🧽 Earth Rated Wipes</div>
-            <div class="comp">🟦 Absorbent Pads</div>
-            <div class="comp">🗑️ Waste Bin</div>
-            <div class="comp">💧 Drainage System</div>
-            <div class="comp">📋 ATD Clean SOP</div>
-            <div class="comp">📱 QR Dog Code</div>
-            <div class="comp">🪧 Etiquette Sign</div>
+            <div class="comp">&#x1f9fb; Earth Rated Bags</div>
+            <div class="comp">&#x1f9fd; Earth Rated Wipes</div>
+            <div class="comp">&#x1f7e6; Absorbent Pads</div>
+            <div class="comp">&#x1f5d1;&#xfe0f; Waste Bin</div>
+            <div class="comp">&#x1f4a7; Drainage System</div>
+            <div class="comp">&#x1f4cb; ATD Clean SOP</div>
+            <div class="comp">&#x1f4f1; QR Dog Code</div>
+            <div class="comp">&#x1faa7; Etiquette Sign</div>
           </div>
-          <p class="station-note">ATD designs the system and SOP. Earth Rated supplies bags, wipes, and pads. Royalmount's janitorial team handles cleaning.</p>
+          <p class="station-note">ATD designs the system and SOP. Earth Rated supplies bags, wipes, and pads. Royalmount janitorial team cleans.</p>
         </div>
       </div>
       <div class="station-details fade-up stagger-2">
@@ -471,21 +479,21 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
         <div class="detail-block">
           <h4>Proposed Locations</h4>
           <div class="locations-grid">
-            <div class="loc-pill primary">🏠 ATD Welcome Zone (flagship)</div>
-            <div class="loc-pill">🚪 Main West Entrance</div>
-            <div class="loc-pill">🚪 Main East Entrance</div>
-            <div class="loc-pill">🅿️ Garage Level P1</div>
-            <div class="loc-pill">🛍️ Retail Corridor</div>
-            <div class="loc-pill">🍽️ Food Hall Perimeter</div>
+            <div class="loc-pill primary">&#x1f3e0; ATD Welcome Zone (flagship)</div>
+            <div class="loc-pill">&#x1f6aa; Main West Entrance</div>
+            <div class="loc-pill">&#x1f6aa; Main East Entrance</div>
+            <div class="loc-pill">&#x1f17f;&#xfe0f; Garage Level P1</div>
+            <div class="loc-pill">&#x1f6cd;&#xfe0f; Retail Corridor</div>
+            <div class="loc-pill">&#x1f37d;&#xfe0f; Food Hall Perimeter</div>
           </div>
         </div>
         <div class="detail-block">
           <h4>Who Does What</h4>
-          <p><strong style="color:var(--accent)">ATD</strong> designs the full system: station layout, drainage, cleaning SOP, and operating framework. Built on years of running our own facility daily.<br><strong style="color:var(--green-light)">Earth Rated</strong> supplies all consumables: bags, wipes, pads. Restocked on schedule.<br><strong style="color:rgba(255,255,255,0.85)">Royalmount</strong> provides the space. Existing janitorial team handles cleaning. No new hires.</p>
+          <p><strong style="color:var(--accent)">ATD Clubhouse</strong> designs the full system: station layout, drainage, cleaning SOP, and operating framework. This is the same system we run in our own facility every day.<br><strong style="color:var(--green-light)">earth rated</strong> supplies all consumables: bags, wipes, pads. Restocked on schedule.<br><strong style="color:rgba(255,255,255,0.85)">Royalmount</strong> provides the space. Existing janitorial team handles cleaning using ATD protocols. No new hires needed.</p>
         </div>
         <div class="detail-block">
-          <h4>Brand Presence</h4>
-          <p>Co-branded signage at every station: Earth Rated x ATD x Royalmount. A hygiene solution that doubles as a visible statement that Royalmount cares about every guest.</p>
+          <h4>The Key Message</h4>
+          <p>Royalmount does not need to build anything new. Does not need to hire anyone new. Does not need to become an expert in pet sanitation. That expertise already exists next door. All Royalmount needs to do is say yes.</p>
         </div>
       </div>
     </div>
@@ -496,47 +504,44 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
 <section class="slide slide--dark" id="slide-6">
   <div class="container">
     <p class="label accent fade-up" style="margin-bottom:0.8rem">The Partners</p>
-    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:2rem">Three partners.<br><em class="accent">One city. One moment.</em></h2>
+    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:2rem">Three neighbors.<br><em class="accent">One solution.</em></h2>
     <div class="partners-split fade-up stagger-2">
       <div class="partner-card atd">
         <div class="p-logo logo-atd">ATD Clubhouse</div>
-        <div class="p-tag">All The Dogs Clubhouse / Montreal</div>
+        <div class="p-tag">Operational Expertise / Next Door to Royalmount</div>
         <ul class="p-points">
           <li>Montreal's most trusted full-service dog facility: daycare, grooming, boarding, training, transport</li>
-          <li>We run outdoor turf areas and manage sanitation every single day. We know exactly how to handle what Royalmount was struggling with.</li>
-          <li>Royalmount-adjacent location makes us the natural anchor for the Welcome Zone</li>
+          <li>We run outdoor turf areas with drainage and manage dog waste sanitation every single day. This is literally what we do.</li>
+          <li>Our Royalmount location makes us the natural anchor for the Welcome Zone</li>
           <li>Deep roots in the Montreal dog community. We know these families by name.</li>
-          <li>Years of experience creating safe, clean, joyful spaces for dogs and their humans</li>
         </ul>
       </div>
       <div class="partner-card er">
         <div class="p-logo logo-er" style="color:#52b788">earth rated</div>
-        <div class="p-tag">World's #1 Dog Waste Brand / B Corp / Born in Montreal</div>
+        <div class="p-tag">World #1 in Dog Waste / B Corp / Born in Montreal</div>
         <ul class="p-points">
           <li>Certified B Corporation. Purpose-driven from day one.</li>
-          <li>Sold in 40+ countries, trusted by millions of dog owners globally</li>
-          <li>The category standard for bags, wipes, and waste solutions</li>
-          <li>Their offices are on the Royalmount grounds, in the same building as Carbonleo. This partnership literally starts next door.</li>
-          <li>A brand Montreal's pet community already loves and uses every single day</li>
-          <li>Aligned and ready. This is already in motion.</li>
+          <li>Sold in 40+ countries. The global standard for bags, wipes, and waste solutions.</li>
+          <li>Their offices are in the same building as Carbonleo, on the Royalmount grounds. This is not a cold pitch. This is neighbors solving a problem together.</li>
+          <li>A brand Montreal's dog community already loves and uses daily.</li>
+          <li>Aligned and ready. Abby from Earth Rated is prepared to join this conversation today.</li>
         </ul>
       </div>
       <div class="partner-card rm">
         <div class="p-logo logo-rm" style="color:rgba(200,210,230,0.9)">Royalmount</div>
-        <div class="p-tag">Montreal's Landmark Destination / Managed by Carbonleo</div>
+        <div class="p-tag">The Platform / The Audience / The Legacy</div>
         <ul class="p-points">
-          <li>The most ambitious retail destination in Montreal — built to set a new standard for the city</li>
-          <li>A brand that Montrealers want to love. Dog owners are asking to come back.</li>
-          <li>The space, the audience, and the platform to make this a national story</li>
-          <li>Carbonleo's mandate is to create an experience that serves the whole community. Pet families are a huge part of that community.</li>
-          <li>First mover advantage: no other mall in Canada has done this right. Royalmount gets to lead.</li>
-          <li>The power to turn a PR setback into the moment that defines the brand.</li>
+          <li>Montreal's most ambitious retail destination, built to set a new standard for the city.</li>
+          <li>A brand Montrealers want to love. The dog owners asking to come back prove it.</li>
+          <li>The space, the audience, and the stage to make this a national story.</li>
+          <li>No mall in Canada has done this. Royalmount has the power to define what a great mall does when something goes wrong.</li>
+          <li>This is not about fixing a ban. It is about building a legacy.</li>
         </ul>
       </div>
     </div>
     <div class="synergy-bar fade-up stagger-3">
-      <div class="icon">🤝</div>
-      <p>"Earth Rated is already on the Royalmount grounds. ATD is right next door. And Royalmount has the platform to make it real. Three Montreal stories. One solution. Let's do this together."</p>
+      <div class="icon">&#x1f91d;</div>
+      <p>"earth rated is already here. ATD is next door. And Royalmount has the stage. Three stories. One solution."</p>
     </div>
   </div>
 </section>
@@ -545,47 +550,48 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
 <section class="slide slide--dark" id="slide-7">
   <div class="container">
     <p class="label accent fade-up" style="margin-bottom:0.8rem">The Royalmount Dog Code</p>
-    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">Five simple steps.<br><em class="accent">Backed by behavioral science.</em></h2>
-    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.55);max-width:640px;margin-bottom:1.5rem">Behavior changes when expectations are clear, tools are available, and the community reinforces the norm.</p>
+    <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">Five steps.<br><em class="accent">Simple and inevitable.</em></h2>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.55);max-width:640px;margin-bottom:1.5rem">When expectations are clear, tools are available, and the community reinforces the norm, compliance is not a problem. It is automatic.</p>
     <div class="protocol-steps fade-up stagger-3">
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-icon">📋</div>
-        <h4>Acknowledge the Code</h4>
-        <p>Scan the QR or grab a card at the entrance. Ten seconds. Sets the expectation before you walk in.</p>
+        <div class="step-icon">&#x1f4cb;</div>
+        <h4>Read the Code</h4>
+        <p>Scan the QR or grab a card at the entrance. Ten seconds. Sets the tone before you walk in.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-icon">🧻</div>
+        <div class="step-icon">&#x1f9fb;</div>
         <h4>Grab Your Bags</h4>
-        <p>Free bags and wipes at every ATD x Earth Rated station. No one walks in unprepared.</p>
+        <p>Free bags and wipes at every ATD x Earth Rated station. No one enters unprepared.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-icon">🐕</div>
+        <div class="step-icon">&#x1f415;</div>
         <h4>Use the Relief Zone</h4>
-        <p>Designated outdoor areas with turf pads before entering. The right behavior, made easy.</p>
+        <p>Designated outdoor areas with turf pads before entering. The right behavior, made effortless.</p>
       </div>
       <div class="step">
         <div class="step-num">4</div>
-        <div class="step-icon">✅</div>
+        <div class="step-icon">&#x2705;</div>
         <h4>Clean Up. Always.</h4>
-        <p>Bins everywhere. Social signage makes cleanup a community norm, not a chore.</p>
+        <p>Bins at every station. Social signage turns cleanup into a shared standard, not a chore.</p>
       </div>
       <div class="step">
         <div class="step-num">5</div>
-        <div class="step-icon">🌟</div>
-        <h4>Be an Ambassador</h4>
-        <p>The owners who use the program become the program. The community owns the standard.</p>
+        <div class="step-icon">&#x1f31f;</div>
+        <h4>Be the Standard</h4>
+        <p>Owners who use the program become the program. The community polices itself.</p>
       </div>
     </div>
     <div class="protocol-note fade-up stagger-4">
-      <strong>Why this works:</strong> Most people don't break norms on purpose. They break them because doing the right thing takes too much effort. Lower the friction (free bags, visible bins, clear zones), add social reinforcement ("most dog owners here clean up"), and compliance approaches near-100%. This is the same model that transformed public smoking behavior in a single generation.
+      <strong>Why this works:</strong> People do not break norms on purpose. They break them because doing the right thing takes too much effort. Lower the friction (free bags, visible bins, clear zones), add social reinforcement ("most dog owners here clean up"), and compliance approaches 100%. This is the same behavioral model that transformed public smoking in a single generation. Clear norms plus low friction equals changed behavior.
     </div>
     <div class="enforce-grid fade-up stagger-5">
-      <div class="enf"><div class="e-icon">🪧</div><h4>Signage System</h4><p>Positive framing everywhere. "Dogs and their humans welcome here."</p></div>
-      <div class="enf"><div class="e-icon">📱</div><h4>Digital Dog Code</h4><p>Shareable on Instagram. Turns compliance into community identity.</p></div>
-      <div class="enf"><div class="e-icon">🔄</div><h4>Quarterly Reviews</h4><p>ATD + Royalmount assess program health and adjust together, every quarter.</p></div>
+      <div class="enf"><div class="e-icon">&#x1faa7;</div><h4>Signage System</h4><p>Positive framing everywhere. "Dogs and their humans: welcome."</p></div>
+      <div class="enf"><div class="e-icon">&#x1f4f1;</div><h4>Digital Dog Code</h4><p>Shareable on Instagram. Turns compliance into community identity.</p></div>
+      <div class="enf"><div class="e-icon">&#x1f381;</div><h4>Welcome Bag</h4><p>Earth Rated courtesy pack for first-time visitors. Sets the relationship on day one.</p></div>
+      <div class="enf"><div class="e-icon">&#x1f504;</div><h4>Quarterly Reviews</h4><p>ATD + Royalmount assess program health and evolve together.</p></div>
     </div>
   </div>
 </section>
@@ -596,45 +602,37 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
     <p class="label fade-up" style="margin-bottom:0.8rem;color:var(--accent-dark)">The Business Case</p>
     <h2 class="heading-lg fade-up stagger-1" style="color:var(--black);margin-bottom:2rem">What Royalmount<br><em style="color:var(--accent-dark)">wins.</em></h2>
     <div class="biz-grid fade-up stagger-2">
-      <div>
+      <div class="biz-col">
         <h3>The Upside</h3>
         <div class="biz-items">
           <div class="biz-item highlight">
-            <div class="bi-title">Instant PR Reversal</div>
-            <div class="bi-body">"We listened. We built the solution." That is the headline. CTV, the Gazette, CityNews all covered the ban. They will cover the comeback, too. This time, positively.</div>
+            <div class="bi-title">Immediate PR Reversal</div>
+            <div class="bi-body">"We listened. We built the solution." That is tomorrow's headline. CTV, the Gazette, CityNews, Virgin Radio all covered the ban. They will cover the comeback. This time, the story is about leadership.</div>
           </div>
           <div class="biz-item">
-            <div class="bi-title">Pet Owner Foot Traffic Returns</div>
-            <div class="bi-body">66% of Montreal households own a pet. The customers who left are waiting to come back. They just need a reason to trust the experience again.</div>
+            <div class="bi-title">Pet Owners Come Back</div>
+            <div class="bi-body">66% of Montreal households own a pet. The shoppers who left are waiting to return. They do not need convincing. They need a reason to trust the experience again.</div>
           </div>
           <div class="biz-item">
-            <div class="bi-title">First-Mover Differentiation</div>
-            <div class="bi-body">No other mall in Canada runs a formal pet relief infrastructure program. Royalmount becomes the benchmark. That competitive advantage is worth far more than stations cost.</div>
-          </div>
-          <div class="biz-item">
-            <div class="bi-title">Gen Z + Millennial Loyalty</div>
-            <div class="bi-body">The most valuable retail demographic chooses where to shop based on values. This sends a clear signal about what Royalmount stands for.</div>
+            <div class="bi-title">First Mover in Canada</div>
+            <div class="bi-body">No mall in the country runs a formal pet relief program. Royalmount does not follow a standard here. Royalmount sets it. Every other property will benchmark against this.</div>
           </div>
         </div>
       </div>
-      <div>
+      <div class="biz-col">
         <h3>The Deal</h3>
         <div class="biz-items">
           <div class="biz-item highlight">
             <div class="bi-title">Zero Cost to Royalmount</div>
-            <div class="bi-body">ATD designs and owns the system. Earth Rated provides the consumables. Royalmount's existing janitorial team handles cleaning. No new hires, no new budget. The expertise comes from what we run in our own facility every single day.</div>
+            <div class="bi-body">ATD designs the system and SOP. Earth Rated provides the consumables. Royalmount's existing janitorial team handles cleaning. No new hires. No new budget line. The expertise walks in from next door.</div>
           </div>
           <div class="biz-item">
-            <div class="bi-title">A Permanent, Self-Reinforcing Solution</div>
-            <div class="bi-body">The infrastructure stays. The protocol builds on itself. Once the community adopts the Dog Code, enforcement becomes social, not operational.</div>
+            <div class="bi-title">Self-Reinforcing System</div>
+            <div class="bi-body">The infrastructure stays. The Dog Code builds on itself. Once the community adopts the norm, enforcement becomes social, not operational. The program gets stronger with time.</div>
           </div>
           <div class="biz-item">
-            <div class="bi-title">The ATD Anchor Effect</div>
-            <div class="bi-body">An ATD location drives a new visitor type: the dog owner who drops off, shops, and picks up. That is 2 to 3 additional mall visits per week, per family.</div>
-          </div>
-          <div class="biz-item">
-            <div class="bi-title">The Headline Royalmount Deserves</div>
-            <div class="bi-body">CEO Andrew Lutfy called Royalmount a "startup phase" project. This is a startup-phase win. The kind of bold, values-driven move that defines a brand in its formative years.</div>
+            <div class="bi-title">Brand Identity</div>
+            <div class="bi-body">Royalmount becomes the mall that listened, acted, and led. Not the one that banned the dogs. The one that brought them back, better than before. That is the story this city will remember.</div>
           </div>
         </div>
       </div>
@@ -648,8 +646,8 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
     <div class="ask-layout">
       <div>
         <p class="label accent fade-up" style="margin-bottom:0.8rem">The Ask + Timeline</p>
-        <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">April 7 to May 1.<br><em class="accent">Let's go.</em></h2>
-        <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.5);margin-bottom:0">This program can launch before summer. Right when dog owners flood Montreal's outdoor destinations.</p>
+        <h2 class="heading-lg fade-up stagger-1" style="margin-bottom:0.5rem">April 7 to May 1.<br><em class="accent">24 days.</em></h2>
+        <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.5);margin-bottom:0">Live before summer. Right when Montreal's dog owners flood every outdoor destination in the city.</p>
         <div class="timeline fade-up stagger-3">
           <div class="tl-item">
             <div class="tl-dot">APR<br>7</div>
@@ -661,16 +659,16 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
           </div>
           <div class="tl-item">
             <div class="tl-dot">APR<br>28</div>
-            <div class="tl-body"><h4>Week 3: Infrastructure Live</h4><p>ATD x Earth Rated stations deployed. Welcome Zone operational. Signage and Dog Code installed.</p></div>
+            <div class="tl-body"><h4>Week 3: Infrastructure Live</h4><p>Stations deployed. Welcome Zone operational. Signage and Dog Code installed at every entrance.</p></div>
           </div>
           <div class="tl-item">
             <div class="tl-dot">MAY<br>1</div>
-            <div class="tl-body"><h4>Launch Day: Public Announcement</h4><p>Royalmount announces the reversal. Press release, Instagram campaign, media outreach. ATD + Earth Rated amplify across every community channel.</p></div>
+            <div class="tl-body"><h4>Launch: Public Announcement</h4><p>Royalmount announces the reversal. Press release, social campaign, media outreach. ATD + Earth Rated amplify across every channel.</p></div>
           </div>
         </div>
       </div>
       <div class="fade-up stagger-2">
-        <p class="label accent" style="margin-bottom:1.5rem">Four Things We Need From You</p>
+        <p class="label accent" style="margin-bottom:1.5rem">Four Things We Need</p>
         <div class="ask-items">
           <div class="ask-item">
             <div class="ask-num">01</div>
@@ -679,19 +677,22 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
           </div>
           <div class="ask-item">
             <div class="ask-num">02</div>
-            <h4>Joint Announcement</h4>
-            <p>A co-branded announcement from Royalmount, ATD, and Earth Rated. Your name makes this a story, not just a program.</p>
+            <h4>Program Endorsement</h4>
+            <p>A co-branded announcement from Royalmount, ATD, and Earth Rated. Your name turns a program into a movement.</p>
           </div>
           <div class="ask-item">
             <div class="ask-num">03</div>
             <h4>Dog Code Integration</h4>
-            <p>Include the Dog Code in the welcome experience: signage, digital comms, and the FAQ page.</p>
+            <p>Include the Royalmount Dog Code in the welcome experience: signage, digital touchpoints, and the FAQ page.</p>
           </div>
           <div class="ask-item">
             <div class="ask-num">04</div>
             <h4>Quarterly Partnership</h4>
-            <p>A standing quarterly review between Royalmount, ATD, and Earth Rated to keep the program healthy and evolving.</p>
+            <p>A standing review between Royalmount, ATD, and Earth Rated. Keep the program healthy, evolving, and accountable.</p>
           </div>
+        </div>
+        <div class="ask-closer fade-up stagger-4">
+          <p>We are ready. The city is waiting. All we need is your yes.</p>
         </div>
       </div>
     </div>
@@ -703,10 +704,10 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
   <div class="close-bg" role="img" aria-label="ATD Clubhouse"></div>
   <div class="close-overlay"></div>
   <div class="close-content">
-    <p class="label accent fade-up" style="margin-bottom:1rem"><span class="logo-atd">ATD Clubhouse</span> + <span class="logo-er">earth rated</span> + <span class="logo-rm">ROYALMOUNT</span></p>
+    <p class="label accent fade-up" style="margin-bottom:1rem"><span class="logo-atd">ATD Clubhouse</span> &nbsp;&times;&nbsp; <span class="logo-er">earth rated</span> &nbsp;&times;&nbsp; <span class="logo-rm">ROYALMOUNT</span></p>
     <h2 class="heading-xl fade-up stagger-1">Pets are<br><em class="accent">family.</em></h2>
-    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.6);max-width:580px;margin:1.5rem auto 1rem">Let us help you act like it.</p>
-    <p class="body-md fade-up stagger-3" style="color:rgba(255,255,255,0.42);max-width:520px;margin:0 auto 2.5rem">Royalmount has a chance to do something genuinely meaningful for Montreal. Not just fix a PR problem. Become the city's most beloved destination for families and their dogs. We built the solution. We are ready to move. All we need is your yes.</p>
+    <p class="body-lg fade-up stagger-2" style="color:rgba(255,255,255,0.7);max-width:580px;margin:1.5rem auto 0.5rem">Let's act like it.</p>
+    <p class="body-lg fade-up stagger-3" style="color:rgba(255,255,255,0.5);max-width:520px;margin:0 auto 2.5rem;font-size:clamp(0.95rem,1.6vw,1.2rem)">Royalmount was built to be the best.<br>This is the moment to prove it.</p>
     <div class="close-contacts fade-up stagger-4">
       <div class="close-contact">
         <div class="c-name">Salomon Naroditsky</div>
@@ -714,7 +715,7 @@ h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.1}
       </div>
       <div class="close-contact">
         <div class="c-name">Abby</div>
-        <div class="c-role">Earth Rated / Partnership Lead</div>
+        <div class="c-role">earth rated / Partnership Lead</div>
       </div>
     </div>
     <p class="conf-note fade-up stagger-5">Confidential / For Discussion Purposes Only / April 7, 2026</p>
