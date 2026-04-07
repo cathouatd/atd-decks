@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ATD – Boarding Payout Calculator</title>
+<style>
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://www.atdclubhouse.com/cdn/fonts/source_sans_pro/sourcesanspro_n4.50ae3e156aed9a794db7e94c4d00984c7b66616c.woff2") format("woff2"),
+       url("https://www.atdclubhouse.com/cdn/fonts/source_sans_pro/sourcesanspro_n4.d1662e048bd96ae7123e46600ff9744c0d84502d.woff") format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://www.atdclubhouse.com/cdn/fonts/source_sans_pro/sourcesanspro_n6.b3caba953ed3a39790a4654f21645e8edac4bd74.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://www.atdclubhouse.com/cdn/fonts/source_sans_pro/sourcesanspro_n7.41cbad1715ffa6489ec3aab1c16fda6d5bdf2235.woff2") format("woff2"),
+       url("https://www.atdclubhouse.com/cdn/fonts/source_sans_pro/sourcesanspro_n7.01173495588557d2be0eb2bb2ecdf8e4f01cf917.woff") format("woff");
+}
+@font-face {
+  font-family: Imbue;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://www.atdclubhouse.com/cdn/fonts/imbue/imbue_n7.20833d9677ab87caeb35cdf1df37052cb3543449.woff2") format("woff2"),
+       url("https://www.atdclubhouse.com/cdn/fonts/imbue/imbue_n7.ffaa167f0a1a40b036cd3876ea9a423749f6bac8.woff") format("woff");
+}
+@font-face {
+  font-family: Imbue;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://www.atdclubhouse.com/cdn/fonts/imbue/imbue_n6.96fce987f154682a71925141671cce2497916695.woff2") format("woff2"),
+       url("https://www.atdclubhouse.com/cdn/fonts/imbue/imbue_n6.8f3cca6aec269c51054a8924520cd0e4abea80dc.woff") format("woff");
+}
+
+:root {
+  --white: #ffffff;
+  --ink: #000000;
+  --ink-light: rgb(58,58,62);
+  --ink-muted: rgba(0,0,0,0.5);
+  --cream: rgb(228,219,211);
+  --cream2: rgb(246,223,217);
+  --border: rgba(0,0,0,0.10);
+  --border-dark: rgba(0,0,0,0.18);
+  --accent: rgb(45,123,108);
+  --accent-light: rgba(45,123,108,0.12);
+  --danger: rgb(152,75,44);
+  --danger-bg: rgba(152,75,44,0.10);
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,.08);
+  --font-heading: Imbue, serif;
+  --font-body: "Source Sans Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+html { -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%); color: var(--ink); line-height: 1.5; font-size: 15px; min-height: 100vh; }
+
+.app { max-width: 680px; margin: 0 auto; padding: 40px 20px 80px; }
+
+/* Header */
+.header { text-align: center; margin-bottom: 36px; }
+.header h1 { font-family: var(--font-heading); font-size: 28px; font-weight: 700; letter-spacing: -0.3px; display: inline-flex; align-items: baseline; gap: 10px; }
+.header .subtitle { font-size: 14px; color: var(--ink-muted); margin-top: 4px; }
+
+/* Calculator Card */
+.calc-card { background: var(--white); border: 1px solid var(--border); border-radius: calc(var(--radius) + 4px); box-shadow: var(--shadow-lg); overflow: hidden; }
+.calc-inputs { padding: 28px 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media(max-width:500px) { .calc-inputs { grid-template-columns: 1fr; } }
+
+.field label { display: block; font-size: 11px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 6px; }
+.field select, .field input[type="date"] {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--white); font-size: 14px; font-family: var(--font-body); color: var(--ink);
+  outline: none; transition: border-color .15s, box-shadow .15s;
+  -webkit-appearance: none; appearance: none;
+}
+.field select { background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+.field select:focus, .field input[type="date"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(45,123,108,.1); }
+
+/* Divider */
+.calc-divider { height: 1px; background: var(--border); }
+
+/* Results */
+.calc-results { padding: 24px 28px 28px; }
+.nights-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-light); color: var(--accent); padding: 4px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 20px; }
+
+.result-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-bottom: 20px; }
+.result-cell { text-align: center; padding: 16px 8px; }
+.result-cell:not(:last-child) { border-right: 1px solid var(--border); }
+.result-cell .rc-label { font-size: 11px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+.result-cell .rc-value { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; font-variant-numeric: tabular-nums; }
+.result-cell .rc-sub { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
+.color-charge { color: var(--ink); }
+.color-payout { color: var(--danger); }
+.color-margin { color: var(--accent); }
+
+/* Breakdown */
+.breakdown { margin-bottom: 24px; }
+.breakdown-title { font-size: 11px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 8px; }
+.breakdown-row { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; font-size: 14px; }
+.breakdown-row:not(:last-child) { border-bottom: 1px solid rgba(0,0,0,0.05); }
+.breakdown-row .br-label { color: var(--ink-light); }
+.breakdown-row .br-value { font-weight: 600; font-variant-numeric: tabular-nums; }
+.breakdown-row .br-discount { font-size: 12px; color: var(--accent); font-weight: 600; margin-left: 6px; }
+.breakdown-row .br-discount-label { font-size: 12px; color: var(--ink-muted); }
+
+/* Copy button */
+.copy-btn { width: 100%; padding: 12px; border: none; border-radius: 10px; background: var(--ink); color: var(--white); font-size: 14px; font-weight: 600; font-family: var(--font-body); cursor: pointer; transition: all .15s; }
+.copy-btn:hover { background: #222; box-shadow: var(--shadow); }
+.copy-btn:active { transform: scale(0.98); }
+.copy-btn.copied { background: var(--accent); }
+
+/* Empty state */
+.empty-state { text-align: center; padding: 40px 20px; color: var(--ink-muted); font-size: 14px; }
+
+/* Collapsible sections */
+.collapsible { margin-top: 24px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.collapsible-header { padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; transition: background .1s; }
+.collapsible-header:hover { background: rgba(0,0,0,0.02); }
+.collapsible-header h2 { font-size: 14px; font-weight: 600; }
+.collapsible-header .chevron { font-size: 12px; color: var(--ink-muted); transition: transform .2s; }
+.collapsible-header.open .chevron { transform: rotate(180deg); }
+.collapsible-body { display: none; border-top: 1px solid var(--border); }
+.collapsible-body.open { display: block; }
+
+/* Registry table */
+.registry-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.registry-table th { text-align: left; padding: 8px 16px; font-size: 11px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .4px; border-bottom: 1px solid var(--border); background: var(--cream); }
+.registry-table td { padding: 8px 16px; border-bottom: 1px solid var(--border); }
+.registry-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.registry-table tbody tr:last-child td { border-bottom: none; }
+
+/* Toast */
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--white); padding: 10px 24px; border-radius: 999px; font-size: 13px; font-weight: 600; box-shadow: var(--shadow-lg); z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
+.toast.show { opacity: 1; pointer-events: auto; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="header">
+    <h1>
+      <img src="https://www.atdclubhouse.com/cdn/shop/files/Favicon.png?crop=center&height=128&v=1732052953&width=128" alt="ATD" style="width:28px;height:28px;border-radius:8px;border:1px solid var(--border);background:rgba(255,255,255,0.92);" />
+      Boarding Payouts
+    </h1>
+    <div class="subtitle">Calculate boarder payouts &amp; customer charges instantly</div>
+  </div>
+
+  <!-- PAYOUT CALCULATOR -->
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="field">
+        <label>Check-in</label>
+        <input type="date" id="checkIn" />
+      </div>
+      <div class="field">
+        <label>Check-out</label>
+        <input type="date" id="checkOut" />
+      </div>
+      <div class="field">
+        <label>Boarding Type</label>
+        <select id="boardingType">
+          <option value="home">Home Boarding</option>
+          <option value="private">Private Boarding</option>
+          <option value="private_at_your_home">Private @ Your Home</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Number of Dogs</label>
+        <select id="numDogs">
+          <option value="1">1 dog</option>
+          <option value="2">2 dogs</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Tip (stay total)</label>
+        <input type="number" id="tipTotal" min="0" step="1" value="0" />
+      </div>
+    </div>
+
+    <div class="calc-divider"></div>
+
+    <div class="calc-results" id="resultsArea">
+      <div class="empty-state" id="emptyState">Select dates to calculate</div>
+      <div id="resultsFilled" style="display:none;">
+        <div class="nights-badge" id="nightsBadge">🌙 0 nights</div>
+
+        <div class="result-grid">
+          <div class="result-cell">
+            <div class="rc-label">Customer Charge</div>
+            <div class="rc-value color-charge" id="totalCharge">$0</div>
+          </div>
+          <div class="result-cell">
+            <div class="rc-label">Boarder Payout</div>
+            <div class="rc-value color-payout" id="totalPayout">$0</div>
+            <div class="rc-sub" id="payoutTipLine" style="display:none;"></div>
+          </div>
+          
+
+        <div class="breakdown" id="breakdownSection">
+          <div class="breakdown-title">Breakdown</div>
+          <div id="breakdownRows"></div>
+        </div>
+
+        <button class="copy-btn" id="copyBtn" onclick="copySummary()">📋 Copy Summary</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RATE REFERENCE (collapsible) -->
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+      <h2>📋 Rate Reference</h2>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="collapsible-body">
+      <table class="registry-table">
+        <thead><tr><th>Type</th><th class="num">Customer / night</th><th class="num">Boarder / night</th><th class="num">Margin / night</th></tr></thead>
+        <tbody>
+          <tr><td>Home Boarding</td><td class="num">$65</td><td class="num">$40</td><td class="num">$25 (38%)</td></tr>
+          <tr><td>Private Boarding</td><td class="num">$80</td><td class="num">$50</td><td class="num">$30 (38%)</td></tr>
+          <tr><td>Private @ Your Home</td><td class="num">$90</td><td class="num">$55</td><td class="num">$35 (39%)</td></tr>
+        </tbody>
+      </table>
+      <div style="padding:12px 16px; font-size:12px; color:var(--ink-muted); border-top:1px solid var(--border);">
+        <strong>Discounts:</strong> Long-stay (Dog #1 only) — 15% off nights 8–14, 20% off nights 15+. Dog #2 — 20% off entire stay (no long-stay).
+      </div>
+    </div>
+  </div>
+
+  <!-- BOARDER REGISTRY (collapsible) -->
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+      <h2>🏠 Boarder Registry</h2>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="collapsible-body">
+      <table class="registry-table">
+        <thead><tr><th>Boarder</th><th>Type</th><th>Location</th><th class="num">Custom Rate</th></tr></thead>
+        <tbody>
+          <tr><td>Marie-Claire D.</td><td>Home</td><td>Plateau</td><td class="num">—</td></tr>
+          <tr><td>Jean-Philippe R.</td><td>Private</td><td>Villeray</td><td class="num">—</td></tr>
+          <tr><td>Sophie L.</td><td>Private @ Your Home</td><td>Outremont</td><td class="num">—</td></tr>
+          <tr><td>Antoine B.</td><td>Home</td><td>Mile End</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXCEPTIONS (collapsible) -->
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+      <h2>⚠️ Exceptions &amp; Overrides</h2>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="collapsible-body">
+      <div style="padding:20px 16px; text-align:center; color:var(--ink-muted); font-size:13px;">No active exceptions</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+// --- RATES ---
+const RATES = {
+  home:                 { charge: 65, payout: 40, label: 'Home Boarding' },
+  private:              { charge: 80, payout: 50, label: 'Private Boarding' },
+  private_at_your_home: { charge: 90, payout: 55, label: 'Private @ Your Home' }
+};
+
+// --- DOM ---
+const $ = id => document.getElementById(id);
+const checkIn = $('checkIn');
+const checkOut = $('checkOut');
+const boardingType = $('boardingType');
+const numDogs = $('numDogs');
+const tipTotal = $('tipTotal');
+
+// Set defaults
+(function init() {
+  const today = new Date();
+  const fmt = d => d.toISOString().slice(0,10);
+  checkIn.value = fmt(today);
+  const co = new Date(today);
+  co.setDate(co.getDate() + 3);
+  checkOut.value = fmt(co);
+  recalc();
+})();
+
+// Recalc on any change
+[checkIn, checkOut, boardingType, numDogs, tipTotal].forEach(el => {
+  el.addEventListener('change', recalc);
+  el.addEventListener('input', recalc);
+});
+
+function recalc() {
+  const ci = new Date(checkIn.value + 'T12:00:00');
+  const co = new Date(checkOut.value + 'T12:00:00');
+  if (isNaN(ci) || isNaN(co) || co <= ci) {
+    $('emptyState').style.display = '';
+    $('resultsFilled').style.display = 'none';
+    return;
+  }
+  $('emptyState').style.display = 'none';
+  $('resultsFilled').style.display = '';
+
+  const nights = Math.round((co - ci) / 864e5);
+  const rate = RATES[boardingType.value];
+  const dogs = parseInt(numDogs.value);
+
+  // --- Dog #1 calculation ---
+  const d1 = calcDog1(nights, rate);
+  // --- Dog #2 calculation ---
+  const d2 = dogs === 2 ? calcDog2(nights, rate) : null;
+
+  const totalCharge = d1.charge + (d2 ? d2.charge : 0);
+  let totalPayout = d1.payout + (d2 ? d2.payout : 0);
+
+  // Tips: boarder gets 90%, Cassidy fee = 10% (always booked through Cassidy)
+  const tip = Math.max(0, parseFloat(tipTotal.value || '0') || 0);
+  const cassidyTipFee = tip * 0.10;
+  const tipToBoarder = tip - cassidyTipFee;
+  totalPayout += tipToBoarder;
+  
+  $('nightsBadge').textContent = '🌙 ' + nights + ' night' + (nights !== 1 ? 's' : '');
+  $('totalCharge').textContent = '$' + totalCharge.toFixed(0);
+  $('totalPayout').textContent = '$' + totalPayout.toFixed(0);
+  const tipLine = $('payoutTipLine');
+  if (tip > 0) {
+    tipLine.style.display = '';
+    tipLine.textContent = `Tip: $${tipToBoarder.toFixed(0)} to boarder (Cassidy fee $${cassidyTipFee.toFixed(0)})`;
+  } else {
+    tipLine.style.display = 'none';
+  }
+  
+  // Breakdown
+  let html = '';
+  html += breakdownLine('Dog #1 — ' + nights + ' night' + (nights !== 1 ? 's' : ''), '$' + d1.charge.toFixed(0) + ' charge · $' + d1.payout.toFixed(0) + ' payout', d1.discountLabel);
+  if (d2) {
+    html += breakdownLine('Dog #2 — ' + nights + ' night' + (nights !== 1 ? 's' : ''), '$' + d2.charge.toFixed(0) + ' charge · $' + d2.payout.toFixed(0) + ' payout', '20% multi-dog discount');
+  }
+  if (tip > 0) {
+    html += breakdownLine('Tip (stay)', `$${tip.toFixed(0)} total`, `Boarder gets $${tipToBoarder.toFixed(0)} · Cassidy fee $${cassidyTipFee.toFixed(0)} (10%)`);
+  }
+  $('breakdownRows').innerHTML = html;
+
+  // Store for copy
+  window._summary = buildSummary(nights, rate, dogs, d1, d2, totalCharge, totalPayout, tip);
+}
+
+function calcDog1(nights, rate) {
+  // Long-stay discount: nights 8-14 => 15% off; 15+ => 20% off
+  let charge = 0, payout = 0;
+  let discountLabel = '';
+
+  if (nights <= 7) {
+    charge = nights * rate.charge;
+    payout = nights * rate.payout;
+  } else if (nights <= 14) {
+    const fullNights = 7;
+    const discNights = nights - 7;
+    charge = fullNights * rate.charge + discNights * rate.charge * 0.85;
+    payout = fullNights * rate.payout + discNights * rate.payout * 0.85;
+    discountLabel = '15% off nights 8–' + nights;
+  } else {
+    const fullNights = 7;
+    const tier1Nights = 7; // nights 8-14
+    const tier2Nights = nights - 14;
+    charge = fullNights * rate.charge + tier1Nights * rate.charge * 0.85 + tier2Nights * rate.charge * 0.80;
+    payout = fullNights * rate.payout + tier1Nights * rate.payout * 0.85 + tier2Nights * rate.payout * 0.80;
+    discountLabel = '15% off nights 8–14, 20% off nights 15+';
+  }
+  return { charge: Math.round(charge * 100) / 100, payout: Math.round(payout * 100) / 100, discountLabel };
+}
+
+function calcDog2(nights, rate) {
+  // 20% off entire stay, no long-stay
+  const charge = nights * rate.charge * 0.80;
+  const payout = nights * rate.payout * 0.80;
+  return { charge: Math.round(charge * 100) / 100, payout: Math.round(payout * 100) / 100, discountLabel: '20% multi-dog' };
+}
+
+function breakdownLine(label, value, discount) {
+  return '<div class="breakdown-row"><span class="br-label">' + label +
+    (discount ? ' <span class="br-discount">' + discount + '</span>' : '') +
+    '</span><span class="br-value">' + value + '</span></div>';
+}
+
+function buildSummary(nights, rate, dogs, d1, d2, totalCharge, totalPayout, tip) {
+  const ci = checkIn.value;
+  const co = checkOut.value;
+  let s = rate.label + ' · ' + ci + ' → ' + co + ' · ' + nights + 'n · ' + dogs + ' dog' + (dogs > 1 ? 's' : '');
+  if ((tip||0) > 0) s += ' · Tip $' + tip.toFixed(0);
+  s += ' · Charge $' + totalCharge.toFixed(0) + ' · Payout $' + totalPayout.toFixed(0);
+  return s;
+}
+
+function copySummary() {
+  if (!window._summary) return;
+  navigator.clipboard.writeText(window._summary).then(() => {
+    const btn = $('copyBtn');
+    btn.classList.add('copied');
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 Copy Summary'; }, 1500);
+  }).catch(() => {
+    // fallback
+    const ta = document.createElement('textarea');
+    ta.value = window._summary;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const btn = $('copyBtn');
+    btn.classList.add('copied');
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 Copy Summary'; }, 1500);
+  });
+}
+
+function toggleSection(header) {
+  header.classList.toggle('open');
+  const body = header.nextElementSibling;
+  body.classList.toggle('open');
+}
+</script>
+</body>
+</html>
